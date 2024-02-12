@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+	<style name="MyButton"
+		   parent="Widget.Material3.Button.IconButton.Filled">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:elevation">16dp</item>
+		<item name="android:paddingHorizontal">24dp</item>
+		<item name="android:shadowColor">@color/md_theme_dark_shadow</item>
+		<item name="android:shadowDx">8</item>
+		<item name="android:shadowDy">8</item>
+		<item name="android:shadowRadius">2</item>
+		<item name="android:textSize">20sp</item>
+		<item name="android:textAlignment">center</item>
+	</style>
+	
+<style name="MyLargeButton"
+	   parent="Widget.Material3.Button.IconButton.Filled">
+	<item name="android:layout_width">wrap_content</item>
+	<item name="android:layout_height">wrap_content</item>
+	<item name="android:elevation">16dp</item>
+	<item name="android:paddingHorizontal">24dp</item>
+	<item name="android:shadowColor">@color/md_theme_dark_shadow</item>
+	<item name="android:shadowDx">8</item>
+	<item name="android:shadowDy">8</item>
+	<item name="android:shadowRadius">2</item>
+	<item name="android:textAlignment">center</item>
+	<item name="android:textSize">28sp</item>
+	<item name="android:typeface">normal</item>
+</style>
+	<style name="edit_text_with_hint">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginBottom">8dp</item>
+		<item name="android:layout_marginHorizontal">16dp</item>
+		<item name="android:layout_marginTop">16dp</item>
+		<item name="android:autofillHints">none</item>
+		<item name="android:inputType">text</item>
+		<item name="android:textAppearance">@style/TextAppearance.Material3.HeadlineSmall</item>
+		<item name="android:textColor">@color/md_theme_dark_onBackground</item>
+		<item name="android:textColorHint">@color/material_dynamic_neutral40</item>
+	</style>
+
+	<style name="date_select_with_hint">
+		<item name="android:layout_width">0dp</item>
+		<item
+			name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center</item><item
+		name="android:layout_marginBottom">8dp</item>
+		<item name="android:layout_marginHorizontal">16dp</item>
+		<item
+			name="android:layout_marginTop">16dp</item>
+		<item name="android:layout_weight">4</item><item
+		name="android:textColor">@color/md_theme_dark_onBackground</item>
+		<item
+			name="android:textColorHint">@color/material_dynamic_neutral40</item>
+		<item
+			name="android:textSize">24sp</item></style>
+	<style name="list_item_card_view">
+		<item name="android:layout_width">match_parent</item>
+		<item
+			name="android:layout_height">wrap_content</item>
+		<item
+			name="android:layout_marginEnd">8dp</item>
+		<item
+			name="android:layout_marginStart">8dp</item>
+		<item
+			name="android:layout_marginTop">8dp</item>
+	</style>
+
+	<style name="list_item_constraint_layout">
+		<item name="android:layout_width">match_parent</item>
+		<item
+			name="android:layout_height">match_parent</item>
+		<item name="android:elevation">16dp</item>
+		<item
+			name="android:padding">8dp</item>
+	</style>
+
+	<style name="list_item_text_view">
+		<item name="android:layout_width">wrap_content</item>
+		<item
+			name="android:layout_height">wrap_content</item>
+		<item name="android:shadowColor">@color/md_theme_dark_inverseSurface</item>
+		<item
+			name="android:shadowDx">2</item>
+		<item name="android:shadowDy">2</item>
+		<item
+			name="android:shadowRadius">1</item>
+		<item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+		<item
+			name="android:textSize">24sp</item>
+		<item
+			name="android:textStyle">bold</item>
+	</style>
+
+	<style name="save_button"
+		   parent="MyLargeButton">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center</item>
+		<item name="android:gravity">center|center_vertical</item>
+		<item name="android:textSize">24sp</item>
+	</style>
+
+	<style name="cancel_button"
+		   parent="MyLargeButton">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_gravity">center</item>
+		<item name="android:gravity">center|center_vertical</item>
+		<item name="android:textAppearance">@style/TextAppearance.Material3.LabelMedium</item>
+		<item name="android:textColor">@color/cardview_light_background</item>
+		<item name="android:textSize">24sp</item>
+	</style>
+</resources>

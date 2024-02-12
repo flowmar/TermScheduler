@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/md_theme_dark_inversePrimary"
+	tools:context=".courses.CourseListActivity"
+	>
+	
+	<androidx.recyclerview.widget.RecyclerView
+		android:id="@+id/course_list_recyclerview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_marginBottom="101dp"
+		tools:listitem="@layout/course_list_item"
+		tools:layout_editor_absoluteY="-50dp"
+		tools:layout_editor_absoluteX="0dp"
+		/><com.google.android.material.floatingactionbutton.FloatingActionButton
+	android:id="@+id/button_add_course"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_gravity="bottom|end"
+	android:layout_marginBottom="24dp"
+	android:layout_marginEnd="24dp"
+	android:clickable="true"
+	android:contentDescription="@string/add_new_term_button_description"
+	android:src="@drawable/add_icon"
+	app:elevation="8dp"
+	app:borderWidth="4dp"
+	app:fabSize="auto"
+	app:backgroundTintMode="screen"
+	app:fabCustomSize="64dp"
+	app:hoveredFocusedTranslationZ="8dp"
+	app:maxImageSize="32dp"
+	app:backgroundTint="#46CA76"
+	/>
+	
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

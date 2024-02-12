@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/list_item_card_view"
+	app:cardBackgroundColor="#4DB6AC"
+	app:strokeWidth="2dp"
+	app:strokeColor="@color/md_theme_dark_shadow"
+	>
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		style="@style/list_item_constraint_layout">
+		
+		<TextView
+			android:id="@+id/term_list_term_name_text_view"
+			style="@style/list_item_text_view"
+			android:paddingVertical="4dp"
+			android:text="@string/term_name"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			/>
+		
+	</androidx.constraintlayout.widget.ConstraintLayout>
+	
+	
+
+</com.google.android.material.card.MaterialCardView>

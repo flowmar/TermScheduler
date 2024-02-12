@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/list_item_card_view"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginTop="8dp"
+	android:background="#03A9F4"
+	app:strokeColor="@color/md_theme_dark_background"
+	app:strokeWidth="2dp"
+	>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+	style="@style/list_item_constraint_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#03A9F4"
+	android:padding="8dp"
+	>
+
+<TextView
+	android:id="@+id/course_list_term_name_text_view"
+	style="@style/list_item_text_view"
+	android:layout_width="115dp"
+	android:layout_height="35dp"
+	android:background="#03A9F4"
+	android:paddingHorizontal="18dp"
+	android:paddingVertical="4dp"
+	android:text="@string/term_name_colon"
+	android:textAppearance="@style/Base.Theme.TermScheduler"
+	android:textSize="14sp"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent"
+	app:layout_constraintBottom_toBottomOf="parent"
+	app:layout_constraintHorizontal_bias="0.024"
+	app:layout_constraintVertical_bias="0.0"
+	/><TextView
+	android:id="@+id/course_list_course_name_text_view"
+	style="@style/list_item_text_view"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginEnd="88dp"
+	android:background="#03A9F4"
+	android:paddingHorizontal="18dp"
+	android:paddingVertical="10dp"
+	android:text="@string/course_name"
+	android:textAppearance="@style/Base.Theme.TermScheduler"
+	android:textSize="20sp"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent"
+	app:layout_constraintBottom_toBottomOf="parent"
+	app:layout_constraintVertical_bias="0.0"
+	app:layout_constraintEnd_toEndOf="parent"
+	app:layout_constraintHorizontal_bias="0.916"
+	/></androidx.constraintlayout.widget.ConstraintLayout></com.google.android.material.card.MaterialCardView>

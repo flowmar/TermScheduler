@@ -1,0 +1,13 @@
+{
+  "text": "Either it\u0027s your first launch, or you haven\u0027t left a note last time",
+  "projectName": "TermScheduler",
+  "files": [
+    "CourseListActivity.java",
+    "Course.java",
+    "Assessment.java",
+    "SchedulerRoomDatabase.java",
+    "TermListActivity.java"
+  ],
+  "fileCounter": 5,
+  "date": "Dec 10, 2023, 9:09:15 PM"
+}

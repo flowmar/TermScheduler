@@ -1,0 +1,48 @@
+
+D
+java:S1604·"(Make this anonymous inner class a lambda(ŠÊÕúûÿÿÿÿ
+X
+java:S4973È"<Strings and Boxed types should be compared using "equals()".(—ğ“Éşÿÿÿÿ
+X
+java:S4973È"<Strings and Boxed types should be compared using "equals()".(—ğ“Éşÿÿÿÿ
+t	java:S115L"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(…¨£Ïùÿÿÿÿ
+z
+java:S1450Q"_Remove the "mCourseViewModel" field and declare it as a local variable in the relevant methods.(’ôÄãıÿÿÿÿ
+x
+java:S1450O"]Remove the "mTermViewModel" field and declare it as a local variable in the relevant methods.( şçáøÿÿÿÿ
+I
+java:S1874ó"2Remove this use of "setMinutes"; it is deprecated.(±ç‹…
+I
+java:S1874ó"2Remove this use of "getMinutes"; it is deprecated.(±ç‹…
+P
+java:S1874ó"9Remove this use of "getTimezoneOffset"; it is deprecated.(±ç‹…
+I
+java:S1874Ì"2Remove this use of "setMinutes"; it is deprecated.(±ç‹…
+I
+java:S1874Ì"2Remove this use of "getMinutes"; it is deprecated.(±ç‹…
+P
+java:S1874Ì"9Remove this use of "getTimezoneOffset"; it is deprecated.(±ç‹…
+I
+java:S1874À"2Remove this use of "setMinutes"; it is deprecated.(±ç‹…
+I
+java:S1874À"2Remove this use of "getMinutes"; it is deprecated.(±ç‹…
+P
+java:S1874À"9Remove this use of "getTimezoneOffset"; it is deprecated.(±ç‹…
+I
+java:S1874å"2Remove this use of "setMinutes"; it is deprecated.(±ç‹…
+I
+java:S1874å"2Remove this use of "getMinutes"; it is deprecated.(±ç‹…
+P
+java:S1874å"9Remove this use of "getTimezoneOffset"; it is deprecated.(±ç‹…
+I
+java:S1135”"2Complete the task associated to this TODO comment.(àõÌ‰
+N
+java:S1135•"2Complete the task associated to this TODO comment.(Îº€Ùüÿÿÿÿ
+N
+java:S1135–"2Complete the task associated to this TODO comment.(º–¹ùÿÿÿÿ
+N
+java:S1135—"2Complete the task associated to this TODO comment.(‰×Åöúÿÿÿÿ
+N
+java:S1135˜"2Complete the task associated to this TODO comment.(§ìæßøÿÿÿÿ
+N
+java:S1135™"2Complete the task associated to this TODO comment.(®ñ–æûÿÿÿÿ

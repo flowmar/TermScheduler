@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/md_theme_dark_onTertiary"
+	android:orientation="vertical"
+	android:paddingHorizontal="20dp"
+	android:paddingVertical="24dp"
+	tools:context=".terms.AddEditTermActivity"
+	>
+
+	<com.google.android.material.textfield.TextInputEditText
+		android:id="@+id/edit_text_term_name"
+		style="@style/edit_text_with_hint"
+		android:hint="@string/term_name"
+		/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:baselineAligned="true"
+		android:orientation="horizontal"
+		>
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/textview_selected_term_start_date"
+			style="@style/date_select_with_hint"
+			android:hint="@string/textview_term_start_date_hint"
+			/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/button_select_term_start_date"
+			style="@style/MyButton"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_weight="4"
+			android:text="@string/button_select_start_date_text"
+			android:textSize="20sp"
+			/>
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:baselineAligned="true"
+		android:orientation="horizontal"
+		>
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/textview_selected_term_end_date"
+			style="@style/date_select_with_hint"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginBottom="8dp"
+			android:layout_marginHorizontal="16dp"
+			android:layout_marginTop="16dp"
+			android:layout_weight="4"
+			android:hint="@string/textview_term_end_date_hint"
+			android:textSize="24sp"
+			/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/button_select_term_end_date"
+			style="@style/MyButton"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_vertical"
+			android:layout_weight="4"
+			android:text="@string/button_select_end_date_text"
+			android:textSize="20sp"
+			/>
+	</LinearLayout>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

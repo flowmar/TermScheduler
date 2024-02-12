@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
+  <component name="AndroidGradleBuildConfiguration">
+    <option name="COMMAND_LINE_OPTIONS" value="--stacktrace --debug" />
+  </component>
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_edit_assessment.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_edit_course.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_edit_term.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_assessment_list.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_course_list.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_notes.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout-land/activity_term_list.xml">
+        <config>
+          <state>Landscape</state>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_assessment.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_course.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_term.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_assessment_list.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_course_list.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_notes.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_term_list.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/assessment_list_item.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/course_list_item.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/note_list_item.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/layout/term_list_item.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/add_assessment_menu.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/add_course_menu.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/add_term_menu.xml">
+        <config>
+          <theme>@style/Theme.TermScheduler</theme>
+        </config>
+      </layout>
+    </layouts>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="188d9dcd-f6c5-43e7-9586-c21494ece1db" name="Changes" comment="feat: Add date and time pickers and edit Assessment model for Assessment Start and End Alarms.">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/GitLink.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/cody_project_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsonCatalog.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00490890cb37dd31121014796976ad88101349ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/01c3c3ec09c8446c864a4551797a71f1c5121345" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/045cf9a286dbabdd21f05f8def7ef24b39973b42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/0883f95bb2c8df4c9c80060bc5e5f38a3a19011e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08e6ed48b6a21b49b20ebb725b9dcaeac560a09f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/b/0b3059f8be670327bf2bafbba4790a49a64e0ae4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/f/0f0c447a5aebc17d71e2c1c8fd6c2cff2ad4c971" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12f9816438b7281bde64a6971d4a49ef86579736" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/134fdd4512f46835d774cb010e21ffd78bb77037" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/13cae2ffa11b38f0d8ed1f372ab62ac2225817bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/5/15ff8ba7ba8aa142a4d5588fa03db65ddf2b4f45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1d8793cb9eeb0e9666b2b200572ba23da6a0bfb5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/d/1df6058348b9e2ca20d2e7135ca97153612e439b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/f/1fc2365362cbeadb3ad840f6fbe13e7904d7d679" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/204e76c88202a7d499714611b22aa69f7178ce2a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/0/20c3686aad43f3faff1a1e8e155c76552b4184a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/22b701479cafe0cd0961e01fa878b48dfd50dbf7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/3/232c03cdc71bcf1e4977ac9ba74ebeaa5aa07162" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/6/26879864bae56e4094dc79cf7cdf5675cf086069" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/6/26c370892a64e86838532e341d0fde40cf0324ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/276b05b6a70623916e2c27146b1bd5ffcbbaf9d3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2a357145b04aeee0545d8bc616c6d89a975ff771" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/0/30a96794f7bd55020caaa5a7bc75644f09f77788" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/3163803bc300565a6a78322ba4a96343ac49e2f1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/1/31e30235fd8d580d85fdb612a61f89fdfbfd5564" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/3721b3a33cf21cdba78104fb358d159ec354a4eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/38dc3a5f14ceb2aaf65d2bd359f8d2add357babf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/38eacb3912390d41c0166fc5b107c5da1b5b0c3d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/a/3ab1266e0523c57674366f20e0c10356ef80e5b0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/b/3b6b15c7207e4257792df72eea5db7a1b7628a32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/f/3ffc2b35597dce786ee8a1cc51b1cd1ce2cea9ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/1/41d94d542eb07930019955e360e3288fdff2668b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/43191934e0718541e6d77665d19d097ef8fe9cdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/3/432f996d96e74b27d1a1e9f3b591aebbbd06b16a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/46bd2e07eab4639e941e892aa1101577a7f124ad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4a02c0892633b1b6cf2d36c2a662e249b1c28d20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/f/4fcb92760235168d372f9067e03975059c05be6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/516e730a14e71f02fa73f3acd6dc7cea9a9fe002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/51970ef2e88c5655298714496ad9920f97f60ff3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/51f4988758f18ae34a74c818b0a7aa9e64ff83d8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52114fdaa426e9b83a3c5df4e11c4f0ebbcd814b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/4/54e7293bee14e602f2c6c008c4d32487f353bdc1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/7/570378557088348d607409e7d4371d004844a63f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/593c361878f48cf1b1152db144341405610a12eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/9/597ee72a8e9f089a0f26608d0d77229bc4510a37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/a/5abcb244341581733d2d0989d81c08aeedc0a477" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/d/5d7b16f2766835875994cb1fe9f35f3251a1b936" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e0f6a19c2f540bee0b1b08db2e75c1ce31eb093" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/601ade73bbacccbff1744aa267d455fe6ee6ffd6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/6551927303f9eb9ee29b54aef852387235a3e309" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/662f9d912d5502f1ed333db085c4d125e6b0e63b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/a/6a11c55f1f4ca9bf0d9c0d457f4399286dfdc5b5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/c/6c2193e090c53ebe039a28ee0f93415902762a26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/7050ecffad71792038933b572309bd23ba744dff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/718b3d360f18368c1de26f899664d2a6b24e2547" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/749edfcc96398253e5b3416184e95c46621da850" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/6/76c47f9330493c7c8cb53935e8b320b9c67c5d5a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b24c4467d329dfcf575e54f2b5bcfe05700ebbd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/f/7fcac164c7a46b8fc6411ea93226c884af6044db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/2/826a237ad06ddff03f3fdb76291dc6b24c51e4e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/8314b24ab17a330590594cf81ffcf5d2dd588444" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/3/8399c478a6e98f431f9f48f2ddbd08655c11b74f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88884cf1d6cb65b9787a46101b792aa36bfa1971" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/899247f661f69558b52a862f8d0a66eee0380dd5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/9/89ad72d173a4d81be3bc6b3d6975cf9a2622873e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8d3489e15ef1e57976e23ea3c1fc429c731a0630" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/f/8f047e69eb7f01a3721febe9378684e60d3ffe4e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/909ae3f585a05df9b8f2d0a58603339c245c2f1f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/91d6ef99e949da87571d4aee1f8c8271c6f3422b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/6/9666cbb489fd6bdf41bb3375bbc9fa297df3a3e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/99437a72e53e3372cda2bff4e9e442b296b81b2e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/994f1980d0f0df42c4444de326a4d981a8da6350" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/9/9989923fe56d1267c48dc7d3ab69ef478deb7aba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a181c13f86219d0c014881a98df9a40a0a8b0263" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a23c5826b9e43ac800045078039410ea3817eb39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2419b3106d73ac46d90420833fbf1593dff7476" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2e8e32ca0a8ded03bc06a990670fb66da2c421c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a37233d05708edc850438f70c1f21512ca9edbcc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/3/a3fb684ad2fb34e556ac8b380734813a6c93804a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/8/a8a52112049d840217cfa586a3a399d9502f9b94" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae1fc942a7eee019794830f0eafbf2333d76c2b2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/aed00ef18c48a388db486127bbdbc490ce02283e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/af145bcd76e1cf9bf01085ec9075257d6de68492" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/2/b2e6bf73c16cf7f40310b6a55628127c4c9f671a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3e1670e52658d9dbc568f3111dfb1b47501c953" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/7/b79690bca340f64a627f5dff9a77b29aacd7ebdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b99d84c6627a644b12f70698117c6744c12b1281" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b9b17a24d2577939fee7e4099d9b34294a6ed394" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/a/ba151fe3ab296f057b5f87142f99a82f6ccc7436" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bbec9760102159de54c1feb138ea5a53c36b22e3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc199be1972ff36e1397ae80e13ad04c7fe8bf97" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c32e500ca7c3e452d2ddea79e0ad11cf0dc5afdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c9ebfb61387ef49783e81fa12b3f1b1e77dfb5c1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d10705d92e7f529832cf4f1c735edbfc25a9a0eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/1/d14c11b4cb0bad9ba8e23dbe8799bbdb468d3e8f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d2281fbb3027de2722081a53408dd77628bf080e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d22caa96bf2c7dc373d591173c0cd66a10790da9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/2/d2a4383452aad84a18429a5844d31330a012a9e6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4115e7e13112fe372c450a6354345d7e7531a57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d4c0dbcb174883f4a1a792b2b031784c455fbdd8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d568d439a220a02d46fff0daec463d43c437ab75" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/5/d5e0db0d4e901ce70aa34e5cb6e1451e7c51ae9d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d7192ef179bd03e6f04509e37ac363f48d5421c4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/7/d740d2b2c13233720769f8251c4c4fc2976af9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d850b449ba437660eb7a94943544053d784e9dba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d92e81c6492ea7499930694e278a564a65f237f4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da0c78bde1d34dc92410718386c4a9ba394944af" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/db1ccee51658a76f376983c44ecdf430496c5b9f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/c/dc94ef8b8d771c2f83198a16725c211fb7b87437" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/d/dd7b3350c29c49497756c7f32c69a3bed18b1cba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/f/df9952752661860bcb27f5e6d074508a54324c38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/7/e70bc891b72d757fbff7d21e1f4472c40e29ddf9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ec4317fc3093e8c354ef226260d7fd566c3957fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed525cc634915cb440b63edcf7e9587ecb4294c1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/ee0f39719d25aff83afcedc8bbe16ce42da13b69" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eef232d69fdc879a4a85a9b23f327916f0e3069f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/0/f06e4b9b883c4d53c45f2b8a028d48790a4ce86c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/3/f37067537e8012bfd5065c3c31c099fef88d83e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f532c1228f7b31701d6fa0ddb372c8d23e1a9704" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f674e656be4059d594e7bd57059d3c35dc1681fa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f94f9d50d048e9547bce663e7c5951a57d1010e5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fb76a1bc912c98104e170de380a305bebd749082" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/d/fd1f4d3864303ad8226a7209b3f15154a64662d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fea91c143a1c6f73d8e24fa2286a3ad75b418000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fef538910edd92c0d2045914550c5ca1e5363845" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/0/00490890cb37dd31121014796976ad88101349ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/1/01c3c3ec09c8446c864a4551797a71f1c5121345" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/4/045cf9a286dbabdd21f05f8def7ef24b39973b42" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/0883f95bb2c8df4c9c80060bc5e5f38a3a19011e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/08e6ed48b6a21b49b20ebb725b9dcaeac560a09f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/b/0b3059f8be670327bf2bafbba4790a49a64e0ae4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/f/0f0c447a5aebc17d71e2c1c8fd6c2cff2ad4c971" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/2/12f9816438b7281bde64a6971d4a49ef86579736" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/134fdd4512f46835d774cb010e21ffd78bb77037" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/3/13cae2ffa11b38f0d8ed1f372ab62ac2225817bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/5/15ff8ba7ba8aa142a4d5588fa03db65ddf2b4f45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1d8793cb9eeb0e9666b2b200572ba23da6a0bfb5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/d/1df6058348b9e2ca20d2e7135ca97153612e439b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/f/1fc2365362cbeadb3ad840f6fbe13e7904d7d679" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/0/204e76c88202a7d499714611b22aa69f7178ce2a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/0/20c3686aad43f3faff1a1e8e155c76552b4184a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/2/22b701479cafe0cd0961e01fa878b48dfd50dbf7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/3/232c03cdc71bcf1e4977ac9ba74ebeaa5aa07162" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/6/26879864bae56e4094dc79cf7cdf5675cf086069" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/6/26c370892a64e86838532e341d0fde40cf0324ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/7/276b05b6a70623916e2c27146b1bd5ffcbbaf9d3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2a357145b04aeee0545d8bc616c6d89a975ff771" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/0/30a96794f7bd55020caaa5a7bc75644f09f77788" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/1/3163803bc300565a6a78322ba4a96343ac49e2f1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/1/31e30235fd8d580d85fdb612a61f89fdfbfd5564" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/7/3721b3a33cf21cdba78104fb358d159ec354a4eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/8/38dc3a5f14ceb2aaf65d2bd359f8d2add357babf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/8/38eacb3912390d41c0166fc5b107c5da1b5b0c3d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/a/3ab1266e0523c57674366f20e0c10356ef80e5b0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/b/3b6b15c7207e4257792df72eea5db7a1b7628a32" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/f/3ffc2b35597dce786ee8a1cc51b1cd1ce2cea9ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/1/41d94d542eb07930019955e360e3288fdff2668b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/3/43191934e0718541e6d77665d19d097ef8fe9cdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/3/432f996d96e74b27d1a1e9f3b591aebbbd06b16a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/6/46bd2e07eab4639e941e892aa1101577a7f124ad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/a/4a02c0892633b1b6cf2d36c2a662e249b1c28d20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/f/4fcb92760235168d372f9067e03975059c05be6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/516e730a14e71f02fa73f3acd6dc7cea9a9fe002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/51970ef2e88c5655298714496ad9920f97f60ff3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/1/51f4988758f18ae34a74c818b0a7aa9e64ff83d8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52114fdaa426e9b83a3c5df4e11c4f0ebbcd814b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/4/54e7293bee14e602f2c6c008c4d32487f353bdc1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/7/570378557088348d607409e7d4371d004844a63f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/9/593c361878f48cf1b1152db144341405610a12eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/9/597ee72a8e9f089a0f26608d0d77229bc4510a37" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/a/5abcb244341581733d2d0989d81c08aeedc0a477" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/d/5d7b16f2766835875994cb1fe9f35f3251a1b936" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/e/5e0f6a19c2f540bee0b1b08db2e75c1ce31eb093" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/0/601ade73bbacccbff1744aa267d455fe6ee6ffd6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/5/6551927303f9eb9ee29b54aef852387235a3e309" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/6/662f9d912d5502f1ed333db085c4d125e6b0e63b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/8/68fdab5242df91961f662bda497f3abc7def2692" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/a/6a11c55f1f4ca9bf0d9c0d457f4399286dfdc5b5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/c/6c2193e090c53ebe039a28ee0f93415902762a26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/e/6ecd6000a7b6f4a2884412ff19f74193ed089648" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/0/7050ecffad71792038933b572309bd23ba744dff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/718b3d360f18368c1de26f899664d2a6b24e2547" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/4/749edfcc96398253e5b3416184e95c46621da850" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/6/76c47f9330493c7c8cb53935e8b320b9c67c5d5a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/b/7b24c4467d329dfcf575e54f2b5bcfe05700ebbd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/f/7fcac164c7a46b8fc6411ea93226c884af6044db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/2/826a237ad06ddff03f3fdb76291dc6b24c51e4e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/3/8314b24ab17a330590594cf81ffcf5d2dd588444" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/3/8399c478a6e98f431f9f48f2ddbd08655c11b74f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88884cf1d6cb65b9787a46101b792aa36bfa1971" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/9/899247f661f69558b52a862f8d0a66eee0380dd5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/9/89ad72d173a4d81be3bc6b3d6975cf9a2622873e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/d/8d3489e15ef1e57976e23ea3c1fc429c731a0630" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/f/8f047e69eb7f01a3721febe9378684e60d3ffe4e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/0/909ae3f585a05df9b8f2d0a58603339c245c2f1f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/1/91d6ef99e949da87571d4aee1f8c8271c6f3422b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/6/9666cbb489fd6bdf41bb3375bbc9fa297df3a3e7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/99437a72e53e3372cda2bff4e9e442b296b81b2e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/994f1980d0f0df42c4444de326a4d981a8da6350" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/9/9989923fe56d1267c48dc7d3ab69ef478deb7aba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/1/a181c13f86219d0c014881a98df9a40a0a8b0263" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/2/a23c5826b9e43ac800045078039410ea3817eb39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/2/a2419b3106d73ac46d90420833fbf1593dff7476" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/2/a2e8e32ca0a8ded03bc06a990670fb66da2c421c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/3/a37233d05708edc850438f70c1f21512ca9edbcc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/3/a3fb684ad2fb34e556ac8b380734813a6c93804a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/8/a8a52112049d840217cfa586a3a399d9502f9b94" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/ae1fc942a7eee019794830f0eafbf2333d76c2b2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/aed00ef18c48a388db486127bbdbc490ce02283e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/f/af145bcd76e1cf9bf01085ec9075257d6de68492" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/2/b2e6bf73c16cf7f40310b6a55628127c4c9f671a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/3/b3e1670e52658d9dbc568f3111dfb1b47501c953" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/7/b79690bca340f64a627f5dff9a77b29aacd7ebdb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/9/b99d84c6627a644b12f70698117c6744c12b1281" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/9/b9b17a24d2577939fee7e4099d9b34294a6ed394" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/a/ba151fe3ab296f057b5f87142f99a82f6ccc7436" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bbec9760102159de54c1feb138ea5a53c36b22e3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/c/bc199be1972ff36e1397ae80e13ad04c7fe8bf97" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/3/c32e500ca7c3e452d2ddea79e0ad11cf0dc5afdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/9/c9ebfb61387ef49783e81fa12b3f1b1e77dfb5c1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/d/cd2de21331b8b4884cc55bf444cc39c31ba4bdde" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/1/d10705d92e7f529832cf4f1c735edbfc25a9a0eb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/1/d14c11b4cb0bad9ba8e23dbe8799bbdb468d3e8f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d2281fbb3027de2722081a53408dd77628bf080e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d22caa96bf2c7dc373d591173c0cd66a10790da9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/2/d2a4383452aad84a18429a5844d31330a012a9e6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4115e7e13112fe372c450a6354345d7e7531a57" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d4c0dbcb174883f4a1a792b2b031784c455fbdd8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d568d439a220a02d46fff0daec463d43c437ab75" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/5/d5e0db0d4e901ce70aa34e5cb6e1451e7c51ae9d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/7/d7192ef179bd03e6f04509e37ac363f48d5421c4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/7/d740d2b2c13233720769f8251c4c4fc2976af9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/8/d850b449ba437660eb7a94943544053d784e9dba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/9/d92e81c6492ea7499930694e278a564a65f237f4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da0c78bde1d34dc92410718386c4a9ba394944af" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/db1ccee51658a76f376983c44ecdf430496c5b9f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/b/dbcff70658daf80b53ce624f6adcaa529df5ed8d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/c/dc94ef8b8d771c2f83198a16725c211fb7b87437" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/d/dd7b3350c29c49497756c7f32c69a3bed18b1cba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/f/df9952752661860bcb27f5e6d074508a54324c38" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/7/e70bc891b72d757fbff7d21e1f4472c40e29ddf9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/c/ec4317fc3093e8c354ef226260d7fd566c3957fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/d/ed525cc634915cb440b63edcf7e9587ecb4294c1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/e/ee0f39719d25aff83afcedc8bbe16ce42da13b69" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/e/eef232d69fdc879a4a85a9b23f327916f0e3069f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/0/f06e4b9b883c4d53c45f2b8a028d48790a4ce86c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/3/f37067537e8012bfd5065c3c31c099fef88d83e4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/5/f532c1228f7b31701d6fa0ddb372c8d23e1a9704" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/6/f674e656be4059d594e7bd57059d3c35dc1681fa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f94f9d50d048e9547bce663e7c5951a57d1010e5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/b/fb76a1bc912c98104e170de380a305bebd749082" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/d/fd1f4d3864303ad8226a7209b3f15154a64662d6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/e/fea91c143a1c6f73d8e24fa2286a3ad75b418000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/e/fef538910edd92c0d2045914550c5ca1e5363845" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.lastactionnote" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/designite-java-enterprise/.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/designite-java-enterprise/DesigniteJava.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/designite-java-enterprise/DesigniteLog23102023_0832.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/designite-java-enterprise/DesigniteLog23102023_0833.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/com.ebookfrenzy.termscheduler.SchedulerRoomDatabase/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/com.ebookfrenzy.termscheduler.SchedulerRoomDatabase/2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/ebookfrenzy/termscheduler/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/SchedulerRoomDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/AddEditAssessmentActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/Assessment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/AddEditCourseActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/CourseAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/CourseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/CourseListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/CourseViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/notes/CourseNoteAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/notes/CourseNotesListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/notes/CourseNotesViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/AddEditTermActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/Term.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/TermAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/TermDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/TermListActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/TermRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/terms/TermViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/utilities/AssessmentAlertReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/utilities/BootReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/utilities/CourseAlertReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/add_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/close_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/delete_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/notification_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/save_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/term_scheduler_launcher_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_edit_assessment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_edit_course.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_add_edit_term.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_assessment_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_course_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_notes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout-land/activity_term_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_assessment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_course.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_term.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_assessment_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_course_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_notes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_term_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/assessment_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/course_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/note_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/term_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/add_assessment_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/add_course_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/add_term_menu.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/ebookfrenzy/termscheduler/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/findbugs-android-exclude" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/material-theme.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+    </option>
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CodyActiveAccount">
+    <option name="activeAccountId" value="VXNlcjo4ODk5Mw==" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/flowmar/.android/avd/Pixel_7_Pro_API_34.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TermScheduler" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TermScheduler" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TermScheduler" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TermScheduler" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Project Non-Source Files" color="Orange" />
+    <fileColor scope="Project Source Files" color="201ec9" />
+    <fileColor scope="Production" color="Violet" />
+    <fileColor scope="Project Files" color="Blue" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindBugs-IDEA-Workspace">
+    <analyzeAfterCompile>true</analyzeAfterCompile>
+    <analyzeAfterAutoMake>true</analyzeAfterAutoMake>
+    <runInBackground>true</runInBackground>
+    <toolWindowScrollToSource>false</toolWindowScrollToSource>
+    <toolWindowEditorPreview>false</toolWindowEditorPreview>
+    <toolWindowGroupBy>BugRank</toolWindowGroupBy>
+    <analyzeBeforeCheckIn>true</analyzeBeforeCheckIn>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="flowmar &lt;omarimamdev@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="IRenRenameHistory">
+    <option name="rememberedNames">
+      <collection>
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/CourseRepository.java-CourseRepository-scheduleCourseEndAlert-startIntent" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/AddEditCourseActivity.java-AddEditCourseActivity-showCourseStartDateTimePicker-courseStartAlarmDatePickerBuilder" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/AddEditCourseActivity.java-AddEditCourseActivity-showCourseStartDateTimePicker-courseStartAlarmDatePicker" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/courses/AddEditCourseActivity.java-AddEditCourseActivity-showCourseStartDateTimePicker-null-showCourseStartTimePicker" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_course.xml-courseEndAlarmCancelButton" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_edit_course.xml-courseStartAlarmCancelButton" />
+      </collection>
+    </option>
+  </component>
+  <component name="KotlinCodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+    <option name="showPreview" value="true" />
+  </component>
+  <component name="ProjectId" id="2YAJpp2ucS6lK97EwPbfqhtas4l" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="flattenPackages" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/flowmar/Library/CloudStorage/Dropbox/androidStudioProjects/TermScheduler/app/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/flowmar/Library/CloudStorage/Dropbox/androidStudioProjects/TermScheduler&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;memory.settings&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.27820188&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;android.recentlyUsedThemes&quot;: [
+      &quot;Theme.TermScheduler&quot;
+    ]
+  }
+}</component>
+  <component name="PsdUISettings">
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.-413232747">
+      <recent name="com.ebookfrenzy.termscheduler.assessments" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/values" />
+    </key>
+    <key name="android.template.1814996906">
+      <recent name="com.ebookfrenzy.termscheduler.terms" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/com/ebookfrenzy/termscheduler/utilities" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/values-night" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/values" />
+    </key>
+    <key name="android.template.348121391">
+      <recent name="com.ebookfrenzy.termscheduler.notes" />
+    </key>
+    <key name="android.template.70242956">
+      <recent name="com.ebookfrenzy.termscheduler.terms" />
+    </key>
+    <key name="android.template.-1304666492">
+      <recent name="com.ebookfrenzy.termscheduler.assessments" />
+      <recent name="com.ebookfrenzy.termscheduler.courses" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="TermScheduler.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Hybrid>
+      <Java>
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Java>
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+        <option name="ATTACH_ON_WAIT_FOR_DEBUGGER" value="false" />
+        <option name="DEBUG_SANDBOX_SDK" value="false" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <selectedOptions>
+        <option name="beforeRunTasks" />
+      </selectedOptions>
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <shortenClasspath name="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -ea" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="188d9dcd-f6c5-43e7-9586-c21494ece1db" name="Changes" comment="" />
+      <created>1699962643949</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699962643949</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial Commit">
+      <created>1700275674621</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700275674621</updated>
+    </task>
+    <task id="LOCAL-00002" summary="build: Add Entities and Daos&#10;&#10;Add Entities and Daos for Term and Course">
+      <created>1700745415602</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700745415602</updated>
+    </task>
+    <task id="LOCAL-00003" summary="build: Add Room Database&#10;&#10;Add singleton instance of room database.">
+      <created>1700748558067</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700748558067</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: Add Term Repository&#10;&#10;Add TermRepository, created static ExecutorService pool of 4 threads to be used by the application&#10;&#10;Implements: TermRepository, Executor Thread Pool">
+      <created>1700911606827</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700911606827</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: Enhance MainActivity with ViewModel and listeners, refactor DAOs and Entities, update UI themes and layouts&#10;&#10;- MainActivity: Added ViewModel for terms, set up button listeners, and added observer for term changes&#10;- CourseDao: Simplified updateCourse method to use @Update annotation&#10;- Course, Assessment, Term: Refactored fields and methods, added constructors&#10;- TermDao: Minor formatting changes&#10;- colors.xml: Added new color definitions for Material3 theme&#10;- activity_main.xml: Redesigned layout with new buttons&#10;- themes.xml: Updated base theme to Material3 and added color attributes&#10;- AndroidManifest.xml: Added new activities for TermList, CourseList, and AssessmentList&#10;- Removed unused files in .idea/sonarlint directory">
+      <created>1701162777558</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701162777558</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: Update UI themes, layouts and add RecyclerViews to list activities&#10;&#10;This commit includes several changes to the UI of the application. The color scheme in the themes.xml and colors.xml files has been updated to provide a fresh look. The text size in the MainActivity has been increased for better readability. &#10;&#10;The layout of the MainActivity, TermListActivity, AssessmentListActivity, and CourseListActivity have been updated to include RecyclerViews for better list management. The FloatingActionButton has been added to the TermListActivity for adding new terms. &#10;&#10;The MaterialCardView has been used in the term_list_item.xml for a consistent look and feel. The AndroidManifest.xml has been updated to include the new AddTermActivity and to set parentActivityName for the list activities. &#10;&#10;The strings.xml file has been updated to include new string resources required for the updated UI. The misc.xml file has been updated with VisualizationToolProject settings. &#10;&#10;Several Java files have been updated to accommodate these changes. The TermAdapter.java and TermViewModel.java have been updated for the RecyclerView in TermListActivity. The Course.java and CourseDao.java have been updated for the RecyclerView in CourseListActivity. &#10;&#10;This commit also includes the removal of some files related to the sonarlint issue store.">
+      <created>1701264847875</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701264847876</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: Enhance UI with color and elevation changes, add button listener in TermListActivity, refactor TermAdapter and Course classes, update AndroidManifest.xml and dbnavigator.xml, remove unused files in .idea/sonarlint directory">
+      <created>1701373442129</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701373442129</updated>
+    </task>
+    <task id="LOCAL-00008" summary="- Update Gradle version to 8.2.0, update distributionUrl to use Gradle 8.5, update TermAdapter with new methods and OnItemClickListener, create ItemTouchHelper for swipe to delete functionality in TermListActivity, and update delete method in TermRepository to accept Term object instead of termName.&#10;- Refactor TermViewModel and MainActivity, and update close_icon.xml, course_list_item.xml, term_list_item.xml, activity_main.xml, and AndroidManifest.xml.">
+      <option name="closed" value="true" />
+      <created>1701632530577</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701632530577</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: Add Course and Assessment Repositories, View Models, List Items, Lists, etc.">
+      <option name="closed" value="true" />
+      <created>1702258386652</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702258386652</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: AddEditCourseActivity layout, Added activities to AndroidManifest, Add Save Menu Items to  add/edit layouts,">
+      <option name="closed" value="true" />
+      <created>1702271183697</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702271183697</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: AddEditCourseActivity everything except saving Courses, Finish CourseListActivity except populating Term Spinner; add Delete Functionality. Finish Layout using MaterialTextInput.">
+      <option name="closed" value="true" />
+      <created>1702328854308</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702328854308</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: Finish AddEditCourseActivity">
+      <option name="closed" value="true" />
+      <created>1702342697326</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702342697326</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: Finish AddEditAssessmentActivity">
+      <option name="closed" value="true" />
+      <created>1702399087024</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702399087024</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: Finish with Courses - Adding, Editing and Deleting.">
+      <option name="closed" value="true" />
+      <created>1702422517366</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702422517366</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: Finish AssessmentListActivity">
+      <option name="closed" value="true" />
+      <created>1702425801462</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702425801462</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: Finish AddEditAssessmentActivity and all functionality related to tracking terms, courses and assessments.">
+      <option name="closed" value="true" />
+      <created>1702434631600</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702434631600</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: Add restriction for a maximum of 5 assessments per course.">
+      <option name="closed" value="true" />
+      <created>1702481318569</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1702481318569</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: Add assessmentStartDate to Assessment and fix throughout app. Finish note_list_item.">
+      <option name="closed" value="true" />
+      <created>1702751092440</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702751092440</updated>
+    </task>
+    <task id="LOCAL-00019" summary="feat: Complete SMS and Email Course Notes functionality and add Assessment Start Date back into application. Create CourseNoteViewModel and CourseNoteListActivity.">
+      <option name="closed" value="true" />
+      <created>1702783661663</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1702783661663</updated>
+    </task>
+    <task id="LOCAL-00020" summary="feat: Add landscape qualifier for CourseNotes page.">
+      <option name="closed" value="true" />
+      <created>1702783731366</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702783731366</updated>
+    </task>
+    <task id="LOCAL-00021" summary="feat: Halfway add Alarms and Notifications">
+      <option name="closed" value="true" />
+      <created>1702900820554</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1702900820554</updated>
+    </task>
+    <task id="LOCAL-00022" summary="feat: Fix Courses and Terms so that RecyclerView Items get restored if they don't get deleted from the database. Add more example Assessments so that they can just add 1 to check functionality for limiting number of Assessments per Course to 5.">
+      <option name="closed" value="true" />
+      <created>1704075123367</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1704075123367</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: Remove Toggle Buttons from AddEditCourseActivity.java, Add buttons to set or cancel Course Start and Course End Alarms.">
+      <option name="closed" value="true" />
+      <created>1707454751145</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1707454751145</updated>
+    </task>
+    <task id="LOCAL-00024" summary="feat: Go-back point before removing toggle button stuff.">
+      <option name="closed" value="true" />
+      <created>1707700262039</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1707700262039</updated>
+    </task>
+    <task id="LOCAL-00025" summary="feat: Add date and time pickers for Start and End Course Alarms, Edit Course object to have start and end alarm fields, Save datetime picker info to database and retrieve and put into UI when updating">
+      <option name="closed" value="true" />
+      <created>1707718632375</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1707718632375</updated>
+    </task>
+    <task id="LOCAL-00026" summary="feat: Add date and time pickers and edit Assessment model for Assessment Start and End Alarms.">
+      <option name="closed" value="true" />
+      <created>1707748088827</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1707748088827</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myShow1" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <MESSAGE value="build: Add Entities and Daos&#10;&#10;Add Entities and Daos for Term and Course" />
+    <MESSAGE value="build: Add Room Database&#10;&#10;Add singleton instance of room database." />
+    <MESSAGE value="feat: Add Term Repository&#10;&#10;Add TermRepository, created static ExecutorService pool of 4 threads to be used by the application&#10;&#10;Implements: TermRepository, Executor Thread Pool" />
+    <MESSAGE value="feat: Enhance MainActivity with ViewModel and listeners, refactor DAOs and Entities, update UI themes and layouts&#10;&#10;- MainActivity: Added ViewModel for terms, set up button listeners, and added observer for term changes&#10;- CourseDao: Simplified updateCourse method to use @Update annotation&#10;- Course, Assessment, Term: Refactored fields and methods, added constructors&#10;- TermDao: Minor formatting changes&#10;- colors.xml: Added new color definitions for Material3 theme&#10;- activity_main.xml: Redesigned layout with new buttons&#10;- themes.xml: Updated base theme to Material3 and added color attributes&#10;- AndroidManifest.xml: Added new activities for TermList, CourseList, and AssessmentList&#10;- Removed unused files in .idea/sonarlint directory" />
+    <MESSAGE value="feat: Update UI themes, layouts and add RecyclerViews to list activities&#10;&#10;This commit includes several changes to the UI of the application. The color scheme in the themes.xml and colors.xml files has been updated to provide a fresh look. The text size in the MainActivity has been increased for better readability. &#10;&#10;The layout of the MainActivity, TermListActivity, AssessmentListActivity, and CourseListActivity have been updated to include RecyclerViews for better list management. The FloatingActionButton has been added to the TermListActivity for adding new terms. &#10;&#10;The MaterialCardView has been used in the term_list_item.xml for a consistent look and feel. The AndroidManifest.xml has been updated to include the new AddTermActivity and to set parentActivityName for the list activities. &#10;&#10;The strings.xml file has been updated to include new string resources required for the updated UI. The misc.xml file has been updated with VisualizationToolProject settings. &#10;&#10;Several Java files have been updated to accommodate these changes. The TermAdapter.java and TermViewModel.java have been updated for the RecyclerView in TermListActivity. The Course.java and CourseDao.java have been updated for the RecyclerView in CourseListActivity. &#10;&#10;This commit also includes the removal of some files related to the sonarlint issue store." />
+    <MESSAGE value="feat: Enhance UI with color and elevation changes, add button listener in TermListActivity, refactor TermAdapter and Course classes, update AndroidManifest.xml and dbnavigator.xml, remove unused files in .idea/sonarlint directory" />
+    <MESSAGE value="- Update Gradle version to 8.2.0, update distributionUrl to use Gradle 8.5, update TermAdapter with new methods and OnItemClickListener, create ItemTouchHelper for swipe to delete functionality in TermListActivity, and update delete method in TermRepository to accept Term object instead of termName.&#10;- Refactor TermViewModel and MainActivity, and update close_icon.xml, course_list_item.xml, term_list_item.xml, activity_main.xml, and AndroidManifest.xml." />
+    <MESSAGE value="feat: Add Course and Assessment Repositories, View Models, List Items, Lists, etc." />
+    <MESSAGE value="feat: AddEditCourseActivity layout, Added activities to AndroidManifest, Add Save Menu Items to  add/edit layouts," />
+    <MESSAGE value="feat: AddEditCourseActivity everything except saving Courses, Finish CourseListActivity except populating Term Spinner; add Delete Functionality. Finish Layout using MaterialTextInput." />
+    <MESSAGE value="feat: Finish AddEditCourseActivity" />
+    <MESSAGE value="feat: Finish AddEditAssessmentActivity" />
+    <MESSAGE value="feat: Finish with Courses - Adding, Editing and Deleting." />
+    <MESSAGE value="feat: Finish AssessmentListActivity" />
+    <MESSAGE value="feat: Finish AddEditAssessmentActivity and all functionality related to tracking terms, courses and assessments." />
+    <MESSAGE value="feat: Add restriction for a maximum of 5 assessments per course." />
+    <MESSAGE value="feat: Add assessmentStartDate to Assessment and fix throughout app. Finish note_list_item." />
+    <MESSAGE value="feat: Complete SMS and Email Course Notes functionality and add Assessment Start Date back into application. Create CourseNoteViewModel and CourseNoteListActivity." />
+    <MESSAGE value="feat: Add landscape qualifier for CourseNotes page." />
+    <MESSAGE value="feat: Halfway add Alarms and Notifications" />
+    <MESSAGE value="feat: Fix Courses and Terms so that RecyclerView Items get restored if they don't get deleted from the database. Add more example Assessments so that they can just add 1 to check functionality for limiting number of Assessments per Course to 5." />
+    <MESSAGE value="feat: Remove Toggle Buttons from AddEditCourseActivity.java, Add buttons to set or cancel Course Start and Course End Alarms." />
+    <MESSAGE value="feat: Go-back point before removing toggle button stuff." />
+    <MESSAGE value="feat: Add date and time pickers for Start and End Course Alarms, Edit Course object to have start and end alarm fields, Save datetime picker info to database and retrieve and put into UI when updating" />
+    <MESSAGE value="feat: Add date and time pickers and edit Assessment model for Assessment Start and End Alarms." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Add date and time pickers and edit Assessment model for Assessment Start and End Alarms." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/MainActivity.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/MainActivity.java</url>
+          <line>105</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/ebookfrenzy/termscheduler/MainActivity.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.gk646.codestats.settings.Save">
+    <option name="commitTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1701632531694" />
+          <option name="linesCode" value="16562" />
+          <option name="totalLines" value="518654" />
+          <option name="info" value="- Update Gradle version t" />
+        </TimePoint>
+      </list>
+    </option>
+    <option name="genericTimePoints">
+      <list>
+        <TimePoint>
+          <option name="timestamp" value="1701632531694" />
+          <option name="linesCode" value="16562" />
+          <option name="totalLines" value="518654" />
+          <option name="info" value="Dec 3, 2023" />
+        </TimePoint>
+      </list>
+    </option>
+  </component>
+</project>
