@@ -45,40 +45,39 @@ import java.util.TimeZone;
  *******************/
 public class AddEditCourseActivity extends AppCompatActivity
     {
-        private static final String TAG = "com.ebookfrenzy.termscheduler.courses.AddEditCourseActivity";
-
-        static final         String EXTRA_COURSE_NAME             =
+        private static final String                       SET_ALARM                     = "Set Alarm";
+        private static final String                       TAG                           = "com.ebookfrenzy.termscheduler.courses.AddEditCourseActivity";
+        static final         String                       EXTRA_COURSE_NAME             =
                 TAG + "EXTRA_COURSE_NAME";
-        static final         String EXTRA_COURSE_START_DATE       =
+        static final         String                       EXTRA_COURSE_START_DATE       =
                 TAG + "EXTRA_COURSE_START_DATE";
-        static final         String EXTRA_COURSE_END_DATE         =
+        static final         String                       EXTRA_COURSE_END_DATE         =
                 TAG + "EXTRA_COURSE_END_DATE";
-        static final         String EXTRA_COURSE_INSTRUCTOR_NAME  =
+        static final         String                       EXTRA_COURSE_INSTRUCTOR_NAME  =
                 TAG + "EXTRA_COURSE_INSTRUCTOR_NAME";
-        static final         String EXTRA_COURSE_INSTRUCTOR_EMAIL =
+        static final         String                       EXTRA_COURSE_INSTRUCTOR_EMAIL =
                 TAG + "EXTRA_COURSE_INSTRUCTOR_EMAIL";
-        static final         String EXTRA_COURSE_INSTRUCTOR_PHONE =
+        static final         String                       EXTRA_COURSE_INSTRUCTOR_PHONE =
                 TAG + "EXTRA_COURSE_INSTRUCTOR_PHONE";
-        static final         String EXTRA_COURSE_STATUS           =
+        static final         String                       EXTRA_COURSE_STATUS           =
                 TAG + "EXTRA_COURSE_STATUS";
-        static final         String EXTRA_COURSE_TERM_ID          =
+        static final         String                       EXTRA_COURSE_TERM_ID          =
                 TAG + "EXTRA_COURSE_TERM_ID";
-        static final         String EXTRA_COURSE_TERM_NAME        =
+        static final         String                       EXTRA_COURSE_TERM_NAME        =
                 TAG + "EXTRA_COURSE_TERM_NAME";
-        static final         String EXTRA_COURSE_NOTE             =
+        static final         String                       EXTRA_COURSE_NOTE             =
                 TAG + "EXTRA_COURSE_NOTE";
-        static final         String EXTRA_START_ALARM_DATETIME    =
+        static final         String                       EXTRA_START_ALARM_DATETIME    =
                 TAG + "EXTRA_START_ALARM_DATETIME";
-        static final         String EXTRA_END_ALARM_DATETIME      =
+        static final         String                       EXTRA_END_ALARM_DATETIME      =
                 TAG + "EXTRA_END_ALARM_DATETIME";
-        static final         String EXTRA_COURSE_ID               =
+        static final         String                       EXTRA_COURSE_ID               =
                 TAG + "EXTRA_COURSE_ID";
-        private static final String dformat                       = "yyyy-MM-dd";
-
-        private ActivityAddEditCourseBinding binding;
-        private TermViewModel                mTermViewModel;
-        private List<Term>                   termsList;
-        private CourseViewModel              mCourseViewModel;
+        private static final String                       dformat                       = "yyyy-MM-dd";
+        private              ActivityAddEditCourseBinding binding;
+        private              TermViewModel                mTermViewModel;
+        private              List<Term>                   termsList;
+        private              CourseViewModel              mCourseViewModel;
 
         private Button buttonSelectCourseStartAlarm;
 
@@ -554,14 +553,14 @@ public class AddEditCourseActivity extends AppCompatActivity
 
                 int id = getIntent().getIntExtra(EXTRA_COURSE_ID, -1);
 
+                Course editedCourse = new Course(courseName, courseStartDate, courseEndDate, courseStatus,
+                                                 instructorName, instructorPhone, instructorEmail, courseNote,
+                                                 termName, termId, courseStartAlarmDatetime, courseEndAlarmDatetime
+                );
                 if (id != -1)
                     {
 
                         // Create a new Course object using the data entered by the user
-                        Course editedCourse = new Course(courseName, courseStartDate, courseEndDate, courseStatus,
-                                                         instructorName, instructorPhone, instructorEmail, courseNote,
-                                                         termName, termId, courseStartAlarmDatetime, courseEndAlarmDatetime
-                        );
                         editedCourse.setId(id);
 
                         // Get an instance of the CourseViewModel
@@ -575,15 +574,32 @@ public class AddEditCourseActivity extends AppCompatActivity
                 else
                     {
                         // Create a new object using the data entered by the user
-                        Course newCourse = new Course(courseName, courseStartDate, courseEndDate, courseStatus,
-                                                      instructorName, instructorPhone, instructorEmail, courseNote,
-                                                      termName, termId, courseStartAlarmDatetime, courseEndAlarmDatetime
-                        );
 
-                        // If the courseStartAlarmDatetime or courseEndAlarmDatetime is not null, schedule the course alert
-                        if ((courseStartAlarmDatetime != "") || (courseEndAlarmDatetime != ""))
+                        boolean isStartAlarmSet;
+                        boolean isEndAlarmSet;
+
+                        // If the user has not selected a start alarm, cancel the alarm
+                        if (courseStartAlarmDatetime.equals(""))
                             {
-                                scheduleCourseAlert(getApplicationContext(), newCourse);
+                                isStartAlarmSet = false;
+                                scheduleCourseStartAlert(getApplicationContext(), editedCourse, isStartAlarmSet);
+                            }
+                        else
+                            {// Otherwise schedule the alarm
+                                isStartAlarmSet = true;
+                                scheduleCourseStartAlert(getApplicationContext(), editedCourse, isStartAlarmSet);
+                            }
+
+                        // If the user has not selected an end alarm, cancel the alarm
+                        if (courseEndAlarmDatetime.equals(""))
+                            {
+                                isEndAlarmSet = false;
+                                scheduleCourseEndAlert(getApplicationContext(), editedCourse, isEndAlarmSet);
+                            }
+                        else
+                            {// Otherwise schedule the alarm
+                                isEndAlarmSet = true;
+                                scheduleCourseEndAlert(getApplicationContext(), editedCourse, isEndAlarmSet);
                             }
 
 
@@ -591,43 +607,112 @@ public class AddEditCourseActivity extends AppCompatActivity
                         mCourseViewModel = new ViewModelProvider(this).get(
                                 com.ebookfrenzy.termscheduler.courses.CourseViewModel.class);
                         // Add the new Course to the database
-                        mCourseViewModel.insert(newCourse);
+                        mCourseViewModel.insert(editedCourse);
 
                     }
                 finish();
             }
 
-        private void scheduleCourseAlert(Context context, Course course)
+        private static void scheduleCourseEndAlert(Context applicationContext, Course course, boolean isEndAlarmSet)
             {
 
                 // Get an instance of the alarmManager service
-                AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-                // Create an Intent to send to the CourseAlertReceiver
-                Intent startIntent = new Intent(this, CourseAlertReceiver.class);
-                // Create an instance of PendingIntent which will be used to send the broadcast to the CourseAlertReceiver
-                PendingIntent startAlarmIntent = PendingIntent.getBroadcast(context, String.valueOf(course.getId()).hashCode(), startIntent,
-                                                                            PendingIntent.FLAG_UPDATE_CURRENT
-                                                                           );
+                AlarmManager alarmManager = (AlarmManager) applicationContext.getSystemService(Context.ALARM_SERVICE);
 
-                String           triggerStartDateTimeString = course.getCourseStartAlarmDatetime();
-                SimpleDateFormat sdf                        = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
-                long             triggerStartDateTime;
-                try
+                if (isEndAlarmSet)
                     {
-                        Date dateString = sdf.parse(triggerStartDateTimeString);
-                        triggerStartDateTime = dateString.getTime();
-                        Log.i("Set Alarm", "Trigger Date Time: " + triggerStartDateTime);
+                        // Create an Intent to send to the CourseAlertReceiver
+                        Intent endIntent = new Intent(applicationContext, CourseAlertReceiver.class);
+                        // Create an instance of PendingIntent which will be used to send the broadcast to the CourseAlertReceiver
+                        PendingIntent endAlarmIntent =
+                                PendingIntent.getBroadcast(applicationContext, course.getCourseName().hashCode(),
+                                                           endIntent,
+                                                           PendingIntent.FLAG_UPDATE_CURRENT
+                                                          );
 
-                        AlarmManager.AlarmClockInfo alarmClockInfo = new AlarmManager.AlarmClockInfo(triggerStartDateTime, startAlarmIntent);
-                        alarmManager.setAlarmClock(alarmClockInfo, startAlarmIntent);
+                        // Get the alarm datetime that the user selected
+                        String triggerEndDateTimeString = course.getCourseEndAlarmDatetime();
+                        // Create a SimpleDateFormat instance to parse the string into a Date object
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+                        // Create a long variable to hold the time in milliseconds
+                        long triggerEndDateTime;
+
+                        try
+                            {
+                                // Try to parse the string into a Date object
+                                Date endDateString = sdf.parse(triggerEndDateTimeString);
+                                // Get the time in milliseconds
+                                triggerEndDateTime = endDateString.getTime();
+                                Log.i("Set End Alarm", "Trigger Date Time End Alarm: " + triggerEndDateTimeString);
+
+                                // Create an instance of AlarmClockInfo and set the alarm
+                                AlarmManager.AlarmClockInfo alarmClockInfo = new AlarmManager.AlarmClockInfo(triggerEndDateTime, endAlarmIntent);
+                                alarmManager.setAlarmClock(alarmClockInfo, endAlarmIntent);
+                            }
+                        catch (ParseException e)
+                            {
+                                Log.e("Set Alarm Error", e.getMessage());
+                            }
+
                     }
-                catch (ParseException e)
+                else
                     {
-                        Log.e("Set Alarm", e.getMessage());
+                        // TODO: If isAlarmSet is false, then cancel the alarm.
                     }
-
-
             }
 
+        private void scheduleCourseStartAlert(Context context, Course course, boolean isAlarmSet)
+            {
+                // Get an instance of the alarmManager service
+                AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
+                // If an alarm is se
+                if (isAlarmSet)
+                    {
+
+
+                        // Create an Intent to send to the CourseAlertReceiver
+                        Intent startIntent = new Intent(this, CourseAlertReceiver.class);
+                        // Create an instance of PendingIntent which will be used to send the broadcast to the CourseAlertReceiver
+                        PendingIntent startAlarmIntent = PendingIntent.getBroadcast(context, String.valueOf(course.getId()).hashCode(), startIntent,
+                                                                                    PendingIntent.FLAG_UPDATE_CURRENT
+                                                                                   );
+
+                        // Get the alarm datetime that the user selected
+                        String triggerStartDateTimeString = course.getCourseStartAlarmDatetime();
+                        // Create a SimpleDateFormat instance to parse the string into a Date object
+                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+                        // Create a long variable to hold the time in milliseconds
+                        long triggerStartDateTime;
+
+                        try
+                            {
+                                // Try to parse the string into a Date object
+                                Date startDateString = sdf.parse(triggerStartDateTimeString);
+                                // Get the time in milliseconds
+                                triggerStartDateTime = startDateString.getTime();
+                                // Log the time in milliseconds
+                                Log.i(SET_ALARM, "Trigger Date Time: " + triggerStartDateTime);
+
+                                // Create an instance of AlarmClockInfo and set the alarm
+                                AlarmManager.AlarmClockInfo alarmClockInfo = new AlarmManager.AlarmClockInfo(triggerStartDateTime, startAlarmIntent);
+                                alarmManager.setAlarmClock(alarmClockInfo, startAlarmIntent);
+                            }
+                        catch (ParseException e)
+                            {
+                                Log.e(SET_ALARM, e.getMessage());
+                            }
+
+
+                    }
+                else
+                    {
+                        // TODO: If isAlarmSet is false, then cancel the alarm.
+                        Log.i(SET_ALARM, "Alarm not set");
+                    }
+            }
 
     }
+
+
+
