@@ -1,0 +1,65 @@
+<resources>
+	<string name="app_name">TermScheduler</string>
+	<string name="terms">Terms</string>
+	<string name="assessments">Assessments</string>
+	<string name="courses">Courses</string>
+	<string name="term_name">Term Name</string>
+	<string name="term_name_colon">Term Name:</string>
+	<string name="add_new_term_button_description">A plus sign to mean \'add a new term\'</string>
+	<string name="cancel_button_text">Cancel</string>
+	<string name="save_button_text">Save</string>
+	<string name="button_select_end_date_text">Select End Date</string>
+	<string name="textview_term_end_date_hint">Term EndDate</string>
+	<string name="button_select_start_date_text">Select Start Date</string>
+	<string name="textview_term_start_date_hint">Term Start Date</string>
+	<string name="course_name">Course Name</string>
+	<string name="assessment_name">Assessment Name</string>
+	<string name="save">Save</string>
+	<string name="course_end_date">Course End Date</string>
+	<string name="course_start_date">Course Start Date</string>
+	<string name="instructor_name">Instructor Name</string>
+	<string name="instructor_phone">Instructor Phone</string>
+	<string name="instructor_email">Instructor Email</string>
+	<string name="course_notes_hint">Course Notes</string>
+	<string name="term_label">Term</string>
+	<string name="select_term">Select a Term</string>
+	<string name="select_a_course_status">Select a Course Status</string>
+	<string name="assessment_end_date">Assessment End Date</string>
+	<string name="select_assessment_type">Select AssessmentType</string>
+	<string name="select_a_course">Select a Course</string>
+	<string name="assessment_title">Assessment Title</string>
+	<string name="assessment_start_date">Assessment Start Date</string>
+	<string name="send_course_note_by_email_button">Send Course Note By Email Button</string>
+	<string name="send_course_note_by_sms_button">Send Course Note By SMS Button</string>
+	<string name="course_notes">Course Notes</string>
+	<string name="alarm_off">Alarm Off</string>
+	<string name="alarm_on">Alarm On</string>
+	<string name="selected_assessment_type_dropdown_menu_description">Selected Assessment Type Dropdown Menu</string>
+	<string name="selected_assessment_type">Selected Assessment Type</string>
+	<string name="end_alarm_off">End Alarm Off</string>
+	<string name="end_alarm_on">End Alarm On</string>
+	<string name="start_alarm_on">Start Alarm On</string>
+	<string name="start_alarm_off">Start Alarm Off</string>
+	<string name="start_alarm_button">Start Alarm Button</string>
+	<string name="end_alarm_button">End Alarm Button</string>
+	<string name="course_channel_name">Course Notification Channel</string>
+	<string name="course_channel_description">Notification Channel forCourse Alerts</string>
+	<string name="com_ebookfrenzy_termscheduler">com.ebookfrenzy.termscheduler</string>
+	<string name="assessment_channel_name">Assessment Notification Channel</string>
+	<string name="assessment_channel_description">Notification Channel for Assessment Alerts</string>
+	<string name="course_start_alarm_datetime_hint">Course Start Alarm Datetime</string>
+	<string name="set_course_start_alarm_button_label">Set Course Start Alarm</string>
+	<string name="set_course_end_alarm_button_text">Set Course End Alarm</string>
+	<string name="course_end_alarm_datetime_hint">Course End Alarm
+		Datetime</string><string name="cancel_start_alarm_button_label">Cancel Start Alarm</string><string name="cancel_end_alarm_button_label">Cancel End Alarm</string><string name="assessment_start_alarm_datetime_text_view">Assessment Start Alarm DateTime</string><string name="set_assessment_start_alarm_button_text">Set Assessment Start Alarm</string><string name="cancel_assessment_start_alarm_button_text">Cancel Assessment Start Alarm</string><string name="set_assessment_end_alarm_button_text">Set Assessment End Alarm</string><string name="assessment_end_alarm_datetime_text_view">Assessment End Alarm DateTime</string><string name="cancel_assessment_end_alarm_button_text">Cancel Assessment End Alarm</string>
+	<string-array name="course_statuses">
+		<item name="in_progress">In Progress</item>
+		<item name="completed">Completed</item>
+		<item name="dropped">Dropped</item>
+		<item name="plan_to_take">Plan to Take</item>
+	</string-array>
+	<string-array name="assessment_types">
+		<item name="objective">Objective</item>
+		<item name="performance">Performance</item>
+	</string-array>
+</resources>
