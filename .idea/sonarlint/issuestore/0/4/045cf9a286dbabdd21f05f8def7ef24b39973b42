@@ -1,6 +1,0 @@
-
-W	java:S107;"BConstructor has 10 parameters, which is greater than 7 authorized.(şÛÆš
-R
-java:S1144P"7Remove this unused private "getStartDateAsLong" method.(³ĞÕèüÿÿÿÿ
-K
-java:S1144U"5Remove this unused private "getEndDateAsLong" method.(öÈ¦Ä
