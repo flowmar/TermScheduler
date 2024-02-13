@@ -197,8 +197,6 @@ Q.idea/sonarlint/securityhotspotstore/6/6/662f9d912d5502f1ed333db085c4d125e6b0e6
 Q.idea/sonarlint/securityhotspotstore/8/9/89ad72d173a4d81be3bc6b3d6975cf9a2622873e,d/e/dec2faf5de31afb31e857757174b82d39807d069
 Å
 Q.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,1/f/1fe398aa86b382486ed27d0a69bf92f68bd5edaa
-Å
-Q.idea/sonarlint/securityhotspotstore/1/2/12f9816438b7281bde64a6971d4a49ef86579736,3/1/31159d71d97bede8943630d403bed1ad5778c727
 w
 G.idea/sonarlint/issuestore/2/2/22b701479cafe0cd0961e01fa878b48dfd50dbf7,e/a/ea328db7f313034c075541da4855e607fb3b6e4c
 Å
@@ -307,8 +305,6 @@ w
 G.idea/sonarlint/issuestore/4/a/4a02c0892633b1b6cf2d36c2a662e249b1c28d20,4/0/405146753cd0fd1fa910e996c93bc9be6a37343a
 Å
 Q.idea/sonarlint/securityhotspotstore/f/3/f37067537e8012bfd5065c3c31c099fef88d83e4,a/e/ae28491bdbac5131389e437c726315add2376249
-Å
-Q.idea/sonarlint/securityhotspotstore/3/7/3721b3a33cf21cdba78104fb358d159ec354a4eb,d/0/d07b8baf94b0c67ddd0d6a1e4e014211f540dba3
 w
 G.idea/sonarlint/issuestore/1/f/1fc2365362cbeadb3ad840f6fbe13e7904d7d679,a/4/a4bc47eb55ae5f38957b7a7d26eb5e9bdafaea20
 Å
@@ -391,7 +387,3 @@ Uapp/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentRepositor
 Wapp/src/main/java/com/ebookfrenzy/termscheduler/assessments/AssessmentListActivity.java,3/8/38dc3a5f14ceb2aaf65d2bd359f8d2add357babf
 Ç
 Rapp/src/main/java/com/ebookfrenzy/termscheduler/courses/AddEditCourseActivity.java,b/a/ba151fe3ab296f057b5f87142f99a82f6ccc7436
-ö
-japp/src/main/java/com/ebookfrenzy/termscheduler/MainActivity (Omar Imam's conflicted copy 2024-02-12).java,d/c/dcb9aa507395b3a9182e0cdf50db7afce75b3ac6
-£
-sapp/src/main/java/com/ebookfrenzy/termscheduler/SchedulerRoomDatabase (Omar Imam's conflicted copy 2024-02-12).java,5/b/5be94562203dd33c0274a2f923771a367e7589bf
