@@ -596,8 +596,16 @@ public class AddEditCourseActivity extends AppCompatActivity {
       }
 
     } else {
-      // TODO: If isAlarmSet is false, then cancel the alarm.
       Log.i(SET_ALARM, "Alarm not set");
+      Intent startIntent = new Intent(context, CourseAlertReceiver.class);
+      // Create the PendingIntent to cancel the alarm
+      PendingIntent cancelIntent =
+          PendingIntent.getBroadcast(
+              context,
+              ("" + course.getId()).hashCode(),
+              startIntent,
+              PendingIntent.FLAG_UPDATE_CURRENT);
+      alarmManager.cancel(cancelIntent);
     }
   }
 
@@ -647,7 +655,16 @@ public class AddEditCourseActivity extends AppCompatActivity {
       }
 
     } else {
-      // TODO: If isAlarmSet is false, then cancel the alarm.
+      Intent endIntent = new Intent(applicationContext, CourseAlertReceiver.class);
+      // Create the PendingIntent to cancel the alarm
+      PendingIntent cancelIntent =
+          PendingIntent.getBroadcast(
+              applicationContext,
+              course.getCourseName().hashCode(),
+              endIntent,
+              PendingIntent.FLAG_UPDATE_CURRENT);
+      // Cancel the alarm
+      alarmManager.cancel(cancelIntent);
     }
   }
 }
