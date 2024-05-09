@@ -17,13 +17,14 @@ public class CourseListActivity extends AppCompatActivity
     {
 
 
-        private ActivityCourseListBinding binding;
+
         private CourseViewModel           mCourseViewModel;
 
 
         @Override
         protected void onCreate(Bundle savedInstanceState)
             {
+                ActivityCourseListBinding binding;
                 super.onCreate(savedInstanceState);
                 binding = ActivityCourseListBinding.inflate(getLayoutInflater());
                 View view = binding.getRoot();
@@ -129,15 +130,22 @@ public class CourseListActivity extends AppCompatActivity
                                                                              course.getCourseNote()
                                                                             );
 
+                                                             intent.putExtra(AddEditCourseActivity.EXTRA_IS_COURSE_START_ALARM_SET,
+                                                                            course.isCourseStartAlarmSet());
+
+                                                             intent.putExtra(AddEditCourseActivity.EXTRA_IS_COURSE_END_ALARM_SET,
+                                                                             course.isCourseEndAlarmSet());
+
                                                              intent.putExtra(
-                                                                     AddEditCourseActivity.EXTRA_START_ALARM_DATETIME,
+                                                                     AddEditCourseActivity.EXTRA_COURSE_START_ALARM_DATETIME,
                                                                      course.getCourseStartAlarmDatetime()
                                                                             );
 
-
-                                                             intent.putExtra(AddEditCourseActivity.EXTRA_END_ALARM_DATETIME,
+                                                             intent.putExtra(AddEditCourseActivity.EXTRA_COURSE_END_ALARM_DATETIME,
                                                                              course.getCourseEndAlarmDatetime()
                                                                             );
+
+
 
                                                              startActivity(intent);
                                                          });

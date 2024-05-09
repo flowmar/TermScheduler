@@ -72,7 +72,7 @@ public abstract class SchedulerRoomDatabase extends RoomDatabase
                                                                             "341-2222", "vcjones" +
                                                                             "@school.edu", "Instructor was great.",
                                                                     "Fall " +
-                                                                            "2022", 1, null, null
+                                                                            "2022", 1, false, false, null, null
                                                          ));
 
                                                  courseDao.insertCourse(
@@ -80,7 +80,7 @@ public abstract class SchedulerRoomDatabase extends RoomDatabase
                                                                     "Emily Planners", "(653)352-5234",
                                                                     "eplanners@school" +
                                                                             ".edu", "Assessments were very difficult"
-                                                                 , "Spring 2022", 2, null, null
+                                                                 , "Spring 2022", 2, false, false, null, null
                                                          ));
 
                                                  // Populate the database with assessments
