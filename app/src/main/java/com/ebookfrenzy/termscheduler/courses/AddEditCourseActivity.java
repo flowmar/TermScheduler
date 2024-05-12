@@ -1,10 +1,12 @@
 package com.ebookfrenzy.termscheduler.courses;
 
+import android.Manifest;
 import android.app.AlarmManager;
 import android.app.AlarmManager.AlarmClockInfo;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -16,6 +18,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.ViewModelProvider;
 import com.ebookfrenzy.termscheduler.R;
 import com.ebookfrenzy.termscheduler.databinding.ActivityAddEditCourseBinding;
@@ -41,37 +44,76 @@ import java.util.TimeZone;
  * Project: TermScheduler
  * Created At: 2023-12-03 11:56PM
  * Created By: flowmar
- *
- *
- *******************/
+ */
 public class AddEditCourseActivity extends AppCompatActivity {
-  private static final String SET_ALARM = "Set Alarm";
-  private static final String TAG = "com.ebookfrenzy.termscheduler.courses.AddEditCourseActivity";
+
+  /** The {@code EXTRA_COURSE_NAME} */
   static final String EXTRA_COURSE_NAME = TAG + "EXTRA_COURSE_NAME";
+  /** The {@code EXTRA_COURSE_START_DATE} */
   static final String EXTRA_COURSE_START_DATE = TAG + "EXTRA_COURSE_START_DATE";
+  /** The {@code EXTRA_COURSE_END_DATE} */
   static final String EXTRA_COURSE_END_DATE = TAG + "EXTRA_COURSE_END_DATE";
+  /** The {@code EXTRA_COURSE_INSTRUCTOR_NAME} */
   static final String EXTRA_COURSE_INSTRUCTOR_NAME = TAG + "EXTRA_COURSE_INSTRUCTOR_NAME";
+  /** The {@code EXTRA_COURSE_INSTRUCTOR_EMAIL} */
   static final String EXTRA_COURSE_INSTRUCTOR_EMAIL = TAG + "EXTRA_COURSE_INSTRUCTOR_EMAIL";
+  /** The {@code EXTRA_COURSE_INSTRUCTOR_PHONE} */
   static final String EXTRA_COURSE_INSTRUCTOR_PHONE = TAG + "EXTRA_COURSE_INSTRUCTOR_PHONE";
+  /** The {@code EXTRA_COURSE_STATUS} */
   static final String EXTRA_COURSE_STATUS = TAG + "EXTRA_COURSE_STATUS";
+  /** The {@code EXTRA_COURSE_TERM_ID} */
   static final String EXTRA_COURSE_TERM_ID = TAG + "EXTRA_COURSE_TERM_ID";
+  /** The {@code EXTRA_COURSE_TERM_NAME} */
   static final String EXTRA_COURSE_TERM_NAME = TAG + "EXTRA_COURSE_TERM_NAME";
+  /** The {@code EXTRA_COURSE_NOTE} */
   static final String EXTRA_COURSE_NOTE = TAG + "EXTRA_COURSE_NOTE";
-
+  /** The {@code EXTRA_IS_COURSE_START_ALARM_SET} */
   static final String EXTRA_IS_COURSE_START_ALARM_SET = TAG + "EXTRA_IS_START_ALARM_SET";
-
+  /** The {@code EXTRA_IS_COURSE_END_ALARM_SET} */
   static final String EXTRA_IS_COURSE_END_ALARM_SET = TAG + "EXTRA_IS_END_ALARM_SET";
+  /** The {@code EXTRA_COURSE_START_ALARM_DATETIME} */
   static final String EXTRA_COURSE_START_ALARM_DATETIME = TAG + "EXTRA_START_ALARM_DATETIME";
+  /** The {@code EXTRA_COURSE_END_ALARM_DATETIME} */
   static final String EXTRA_COURSE_END_ALARM_DATETIME = TAG + "EXTRA_END_ALARM_DATETIME";
+  /** The {@code EXTRA_COURSE_ID} */
   static final String EXTRA_COURSE_ID = TAG + "EXTRA_COURSE_ID";
+  /** The {@code DFORMAT} */
   private static final String DFORMAT = "yyyy-MM-dd";
+  /** The {@code REQUEST_CODE_ALARM_PERMISSION} */
+  private static final int REQUEST_CODE_ALARM_PERMISSION = 1238804;
+  /** The {@code TAG_FOR_TIME} */
+  private static final String TAG_FOR_TIME = "AddEditCourseActivity Alarm Setting";
+  /** The {@code TAG} */
+  private final String TAG = "com.ebookfrenzy.termscheduler.courses.AddEditCourseActivity";
+  /** The {@code courseEndAlarmDatetime} */
+  private String courseEndAlarmDatetime;
+
+  /** The {@code courseStartAlarmDatetime} */
+  private String courseStartAlarmDatetime;
+
+  /** The {@code binding} */
   private ActivityAddEditCourseBinding binding;
+
+  /** The {@code termsList} */
   private List<Term> termsList;
+
+  /** The {@code buttonSelectCourseStartAlarm} */
   private Button buttonSelectCourseStartAlarm;
+
+  /** The {@code buttonSelectCourseEndAlarm} */
   private Button buttonSelectCourseEndAlarm;
+
+  /** The {@code buttonCancelCourseStartAlarm} */
   private Button buttonCancelCourseStartAlarm;
+
+  /** The {@code buttonCancelCourseEndAlarm} */
   private Button buttonCancelCourseEndAlarm;
 
+  /**
+   * On create.
+   *
+   * @param savedInstanceState the saved instance state
+   */
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     TermViewModel mTermViewModel;
@@ -94,6 +136,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
     buttonCancelCourseEndAlarm = binding.courseEndAlarmCancelButton;
   }
 
+  /** On start. */
   @Override
   protected void onStart() {
     super.onStart();
@@ -163,6 +206,9 @@ public class AddEditCourseActivity extends AppCompatActivity {
     setUpCourseStatusMenu();
   }
 
+  /**
+   * The function sets a click listener for a cancel button related to a course start alarm in Java.
+   */
   private void setCourseStartAlarmCancelButtonClickListener() {
     buttonCancelCourseStartAlarm.setOnClickListener(
         view -> {
@@ -172,6 +218,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
         });
   }
 
+  // It looks like the code snippet you provided is not valid Java code. The characters "u" and "
   private void setCourseEndAlarmCancelButtonClickListener() {
     buttonCancelCourseEndAlarm.setOnClickListener(
         view -> {
@@ -181,6 +228,10 @@ public class AddEditCourseActivity extends AppCompatActivity {
         });
   }
 
+  /**
+   * The setUpStartDatePicker function creates a MaterialDatePicker for selecting a course start
+   * date and updates the UI with the selected date in a specific format.
+   */
   private void setUpStartDatePicker() {
     // Create a MaterialDatePicker Builder instance
     Builder<Long> startDatePickerBuilder = Builder.datePicker();
@@ -210,6 +261,9 @@ public class AddEditCourseActivity extends AppCompatActivity {
         });
   }
 
+  // The above code is a comment in Java. Comments are used to provide explanations or notes within
+  // the code for better understanding. In this
+  // case, the comment appears to be indicating a section of code or a specific character.
   private void setUpEndDatePicker() {
     // Create a MaterialDatePicker Builder instance
     Builder<Long> endDatePickerBuilder = Builder.datePicker();
@@ -227,32 +281,41 @@ public class AddEditCourseActivity extends AppCompatActivity {
 
     // Add a listener to the End Date Picker's OK button
     endDatePicker.addOnPositiveButtonClickListener(
-        new MaterialPickerOnPositiveButtonClickListener<Long>() {
-          @Override
-          public void onPositiveButtonClick(Long selection) {
-            //
-            Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("CST"));
-            calendar.setTimeInMillis(selection);
-            Date myDate = calendar.getTime();
-            myDate.setMinutes(myDate.getMinutes() + myDate.getTimezoneOffset());
-            SimpleDateFormat sdf = new SimpleDateFormat(DFORMAT, Locale.US);
-            String formattedDate = sdf.format(myDate);
-            binding.addEditCourseTextviewSelectedCourseEndDate.setText(formattedDate);
-          }
+        selection -> {
+          //
+          Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("CST"));
+          calendar.setTimeInMillis(selection);
+          Date myDate = calendar.getTime();
+          myDate.setMinutes(myDate.getMinutes() + myDate.getTimezoneOffset());
+          SimpleDateFormat sdf = new SimpleDateFormat(DFORMAT, Locale.US);
+          String formattedDate = sdf.format(myDate);
+          binding.addEditCourseTextviewSelectedCourseEndDate.setText(formattedDate);
         });
   }
 
+  /**
+   * The function `setUpCourseStartAlarmPicker` sets a click listener on a button to show a date and
+   * time picker for selecting a course start alarm.
+   */
   private void setUpCourseStartAlarmPicker() {
 
     // Set a click listener on the courseStartAlarmSelectButton
     buttonSelectCourseStartAlarm.setOnClickListener(view -> showCourseStartDateTimePicker());
   }
 
+  /**
+   * The function setUpCourseEndAlarmPicker sets a click listener on a button to show a date and
+   * time picker for course end alarm selection.
+   */
   private void setUpCourseEndAlarmPicker() {
     // Set a click listener on the courseEndAlarmSelectButton
     buttonSelectCourseEndAlarm.setOnClickListener(view -> showCourseEndDateTimePicker());
   }
 
+  /**
+   * Sets up a term menu by concatenating the ID and Name of each term in the `termsList` into a
+   * single string format and storing them in an `ArrayList` named `concatTerms`.
+   */
   private void setUpTermMenu() {
     ArrayList<String> concatTerms = new ArrayList<>();
 
@@ -268,12 +331,21 @@ public class AddEditCourseActivity extends AppCompatActivity {
     }
   }
 
+  /**
+   * The function setUpCourseStatusMenu adds all course statuses to a menu using a string array
+   * resource.
+   */
   private void setUpCourseStatusMenu() {
     // Add all course statuses to the menu
     binding.addEditCourseTextViewCourseStatus.setSimpleItems(
         getResources().getStringArray(R.array.course_statuses));
   }
 
+  /**
+   * The `showCourseStartDateTimePicker` method in Java creates and displays a MaterialDatePicker
+   * for selecting a course start alarm date, followed by a MaterialTimePicker for selecting a
+   * course start alarm time, and updates the UI accordingly.
+   */
   private void showCourseStartDateTimePicker() {
     // Create a MaterialDatePicker Builder instance
     Builder<Long> courseStartAlarmDatePickerBuilder = Builder.datePicker();
@@ -300,6 +372,15 @@ public class AddEditCourseActivity extends AppCompatActivity {
             showCourseStartAlarmTimePicker(formattedDate);
           }
 
+          /**
+           * The `showCourseStartAlarmTimePicker` method displays a MaterialTimePicker dialog for
+           * selecting a course start alarm time and updates the UI accordingly.
+           *
+           * @param formattedDate The `formattedDate` parameter in the
+           *     `showCourseStartAlarmTimePicker` method is a string that represents a date in a
+           *     specific format. It is used to display the selected date along with the time chosen
+           *     by the user in the time picker dialog.
+           */
           private void showCourseStartAlarmTimePicker(String formattedDate) {
             // Create a MaterialTimePicker Builder instance
             MaterialTimePicker courseStartTimeAlarmPicker = getCourseStartTimeAlarmPicker();
@@ -310,6 +391,12 @@ public class AddEditCourseActivity extends AppCompatActivity {
             courseStartTimeAlarmPicker.addOnPositiveButtonClickListener(
                 new OnClickListener() {
                   @Override
+                  // The code snippet provided is a method in Java that is likely part of an
+                  // OnClickListener implementation for handling click
+                  // events on a View. The method signature indicates that it takes a View object as
+                  // a parameter and does not return any value
+                  // (void). Inside the method, the actual implementation logic for handling the
+                  // click event should be written.
                   public void onClick(View v) {
                     int hour = courseStartTimeAlarmPicker.getHour();
                     int minute = courseStartTimeAlarmPicker.getMinute();
@@ -322,6 +409,10 @@ public class AddEditCourseActivity extends AppCompatActivity {
                     setCourseStartAlarmCancelButtonClickListener();
                   }
 
+                  /**
+                   * The function sets a click listener for a cancel button that clears a text view
+                   * and hides the button.
+                   */
                   private void setCourseStartAlarmCancelButtonClickListener() {
                     binding.courseStartAlarmCancelButton.setOnClickListener(
                         view -> {
@@ -349,6 +440,11 @@ public class AddEditCourseActivity extends AppCompatActivity {
         });
   }
 
+  /**
+   * The `showCourseEndDateTimePicker` function in Java creates and displays a MaterialDatePicker
+   * for selecting a course end alarm date, followed by a MaterialTimePicker for selecting a course
+   * end alarm time, updating the UI accordingly.
+   */
   private void showCourseEndDateTimePicker() {
     // Create a MaterialDatePicker Builder instance
     Builder<Long> courseEndAlarmDatePickerBuilder = Builder.datePicker();
@@ -362,6 +458,15 @@ public class AddEditCourseActivity extends AppCompatActivity {
     // Add a listener to the courseEndAlarmDatePicker's OK button
     courseEndAlarmDatePicker.addOnPositiveButtonClickListener(
         new MaterialPickerOnPositiveButtonClickListener<Long>() {
+          /**
+           * The function converts a timestamp to a formatted date string in Central Time and then
+           * displays a time picker for setting a course end alarm.
+           *
+           * @param selection It looks like the code snippet you provided is a part of an Android
+           *     application where a positive button click event is being handled. The
+           *     `onPositiveButtonClick` method is called when a positive button is clicked, and it
+           *     receives a `Long` parameter named `selection`.
+           */
           @Override
           public void onPositiveButtonClick(Long selection) {
             // Get a Calendar instance in Central Time
@@ -375,6 +480,15 @@ public class AddEditCourseActivity extends AppCompatActivity {
             showCourseEndAlarmTimePicker(formattedDate);
           }
 
+          /**
+           * The `showCourseEndAlarmTimePicker` function displays a MaterialTimePicker for selecting
+           * the end time of a course and updates the UI accordingly.
+           *
+           * @param formattedDate The `formattedDate` parameter in the
+           *     `showCourseEndAlarmTimePicker` method is a String that represents a date in a
+           *     specific format. It is used to display the selected date along with the time in the
+           *     UI when setting the course end alarm time.
+           */
           private void showCourseEndAlarmTimePicker(String formattedDate) {
             // Create a MaterialTimePicker Builder instance
             MaterialTimePicker courseEndTimeAlarmPicker = getCourseEndTimeAlarmPicker();
@@ -397,6 +511,10 @@ public class AddEditCourseActivity extends AppCompatActivity {
                     setCourseEndAlarmCancelButtonClickListener();
                   }
 
+                  /**
+                   * The function sets a click listener for a cancel button related to a course end
+                   * alarm in a Java application.
+                   */
                   private void setCourseEndAlarmCancelButtonClickListener() {
                     binding.courseEndAlarmCancelButton.setOnClickListener(
                         view -> {
@@ -408,6 +526,14 @@ public class AddEditCourseActivity extends AppCompatActivity {
                 });
           }
 
+          /**
+           * The function `getCourseEndTimeAlarmPicker` creates and returns a MaterialTimePicker for
+           * selecting a course end alarm time.
+           *
+           * @return The method `getCourseEndTimeAlarmPicker()` is returning an instance of
+           *     `MaterialTimePicker` that is configured with specific settings such as title text,
+           *     input mode, and time format.
+           */
           @NonNull
           private MaterialTimePicker getCourseEndTimeAlarmPicker() {
             MaterialTimePicker.Builder courseEndAlarmTimePickerBuilder =
@@ -424,6 +550,12 @@ public class AddEditCourseActivity extends AppCompatActivity {
         });
   }
 
+  /**
+   * On create options menu boolean.
+   *
+   * @param menu the menu
+   * @return the boolean
+   */
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     MenuInflater menuInflater = getMenuInflater();
@@ -431,6 +563,12 @@ public class AddEditCourseActivity extends AppCompatActivity {
     return true;
   }
 
+  /**
+   * On options item selected boolean.
+   *
+   * @param item the item
+   * @return the boolean
+   */
   @Override
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == R.id.save_course) {
@@ -443,8 +581,6 @@ public class AddEditCourseActivity extends AppCompatActivity {
   private void saveCourse() {
     boolean isCourseEndAlarmSet;
     boolean isCourseStartAlarmSet;
-    String courseEndAlarmDatetime;
-    String courseStartAlarmDatetime;
     int courseId;
     CourseViewModel mCourseViewModel;
     String courseNote;
@@ -558,11 +694,31 @@ public class AddEditCourseActivity extends AppCompatActivity {
     // Get an instance of the alarmManager service
     AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
+    // Request alarm permission
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      if (!alarmManager.canScheduleExactAlarms()) {
+        ActivityCompat.requestPermissions(
+            this,
+            new String[] {Manifest.permission.SCHEDULE_EXACT_ALARM},
+            REQUEST_CODE_ALARM_PERMISSION);
+        return;
+      }
+    }
+
     // If an alarm is set...
     if (isAlarmSet) {
 
       // Create an Intent to send to the CourseAlertReceiver
       Intent startIntent = new Intent(this, CourseAlertReceiver.class);
+
+      // Put the necessary Extras into the Intent
+      startIntent.putExtra("COURSE_ID", course.getId());
+      startIntent.putExtra("COURSE_NAME", course.getCourseName());
+      startIntent.putExtra("ALERT_TITLE", "Course Starting Soon!");
+      startIntent.putExtra(
+          "ALERT_MESSAGE", "Your course, " + course.getCourseName() + ", is starting soon!");
+      startIntent.putExtra("COURSE_ID", course.getId());
+
       // Create an instance of PendingIntent which will be used to send the broadcast to the
       // CourseAlertReceiver
       PendingIntent startAlarmIntent =
@@ -570,12 +726,12 @@ public class AddEditCourseActivity extends AppCompatActivity {
               context,
               ("" + course.getId()).hashCode(),
               startIntent,
-              PendingIntent.FLAG_UPDATE_CURRENT);
+              PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
       // Get the alarm datetime that the user selected
       String triggerStartDateTimeString = course.getCourseStartAlarmDatetime();
       // Create a SimpleDateFormat instance to parse the string into a Date object
-      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
 
       // Create a long variable to hold the time in milliseconds
       long triggerStartDateTime = 0;
@@ -585,18 +741,27 @@ public class AddEditCourseActivity extends AppCompatActivity {
         Date startDateString = sdf.parse(triggerStartDateTimeString);
         // Get the time in milliseconds
         if (startDateString != null) triggerStartDateTime = startDateString.getTime();
-        // Log the time in milliseconds
-        Log.i(SET_ALARM, "Trigger Date Time: " + triggerStartDateTime);
 
-        // Create an instance of AlarmClockInfo and set the alarm
-        AlarmClockInfo alarmClockInfo = new AlarmClockInfo(triggerStartDateTime, startAlarmIntent);
-        alarmManager.setAlarmClock(alarmClockInfo, startAlarmIntent);
+        // Log the time in milliseconds
+        Log.i(TAG_FOR_TIME, "Trigger DateTime: " + triggerStartDateTime);
+
+        // Set the alarm
+        alarmManager.setExactAndAllowWhileIdle(
+            AlarmManager.RTC_WAKEUP, triggerStartDateTime, startAlarmIntent);
+
+        // Show a confirmation message that the alarm was set
+        Log.i(TAG_FOR_TIME, "Alarm set for " + startDateString + "....hope this works!");
+        Toast.makeText(this, "Alarm set for " + startDateString + "!", Toast.LENGTH_SHORT).show();
       } catch (ParseException e) {
-        if (e.getMessage() != null) Log.e(SET_ALARM, e.getMessage());
+        // Show an error message if the string cannot be parsed
+        Toast.makeText(this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
+        // Log the error message
+        if (e.getMessage() != null) Log.e(TAG_FOR_TIME, e.getMessage());
       }
 
     } else {
-      Log.i(SET_ALARM, "Alarm not set");
+      Log.i(TAG_FOR_TIME, "Alarm not set...cancelling...");
+      courseStartAlarmDatetime = "";
       Intent startIntent = new Intent(context, CourseAlertReceiver.class);
       // Create the PendingIntent to cancel the alarm
       PendingIntent cancelIntent =
@@ -604,17 +769,32 @@ public class AddEditCourseActivity extends AppCompatActivity {
               context,
               ("" + course.getId()).hashCode(),
               startIntent,
-              PendingIntent.FLAG_UPDATE_CURRENT);
+              PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+      // Cancel the alarm with the cancelIntent
       alarmManager.cancel(cancelIntent);
+      // Show a confirmation message that the alarm was cancelled
+      Toast.makeText(this, "Alarm cancelled", Toast.LENGTH_SHORT).show();
+      Log.d(TAG, "scheduleCourseStartAlert: alarm cancelled!");
     }
   }
 
-  private static void scheduleCourseEndAlert(
+  private void scheduleCourseEndAlert(
       Context applicationContext, Course course, boolean isEndAlarmSet) {
 
     // Get an instance of the alarmManager service
     AlarmManager alarmManager =
         (AlarmManager) applicationContext.getSystemService(Context.ALARM_SERVICE);
+
+    // Request alarm permission
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      if (!alarmManager.canScheduleExactAlarms()) {
+        ActivityCompat.requestPermissions(
+            this,
+            new String[] {Manifest.permission.SCHEDULE_EXACT_ALARM},
+            REQUEST_CODE_ALARM_PERMISSION);
+        return;
+      }
+    }
 
     if (isEndAlarmSet) {
       // Create an Intent to send to the CourseAlertReceiver
@@ -626,12 +806,12 @@ public class AddEditCourseActivity extends AppCompatActivity {
               applicationContext,
               course.getCourseName().hashCode(),
               endIntent,
-              PendingIntent.FLAG_UPDATE_CURRENT);
+              PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
       // Get the alarm datetime that the user selected
       String triggerEndDateTimeString = course.getCourseEndAlarmDatetime();
       // Create a SimpleDateFormat instance to parse the string into a Date object
-      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.US);
+      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
 
       // Create a long variable to hold the time in milliseconds
       long triggerEndDateTime = 0;
@@ -649,12 +829,16 @@ public class AddEditCourseActivity extends AppCompatActivity {
         // Create an instance of AlarmClockInfo and set the alarm
         AlarmClockInfo alarmClockInfo = new AlarmClockInfo(triggerEndDateTime, endAlarmIntent);
         alarmManager.setAlarmClock(alarmClockInfo, endAlarmIntent);
+
+        Toast.makeText(this, "Alarm set for " + endDateString + "!", Toast.LENGTH_SHORT).show();
       } catch (ParseException e) {
+        Toast.makeText(this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
         if (!Objects.requireNonNull(e.getMessage()).isEmpty())
           Log.e("Set Alarm Error", e.getMessage());
       }
 
     } else {
+      courseEndAlarmDatetime = "";
       Intent endIntent = new Intent(applicationContext, CourseAlertReceiver.class);
       // Create the PendingIntent to cancel the alarm
       PendingIntent cancelIntent =
@@ -662,9 +846,11 @@ public class AddEditCourseActivity extends AppCompatActivity {
               applicationContext,
               course.getCourseName().hashCode(),
               endIntent,
-              PendingIntent.FLAG_UPDATE_CURRENT);
+              PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
       // Cancel the alarm
       alarmManager.cancel(cancelIntent);
+      Toast.makeText(this, "Alarm cancelled", Toast.LENGTH_SHORT).show();
+      Log.d(TAG, "scheduleCourseEndAlert: alarm cancelled!");
     }
   }
 }
