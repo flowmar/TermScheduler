@@ -57,7 +57,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
   private static final String DFORMAT = "yyyy-MM-dd";
 
   /** The {@code TAG_FOR_TIME} */
-  private static final String TAG_FOR_TIME = "AddEditCourseActivity Alarm Setting";
+  private static final String TAG_FOR_TIME = "AddEditCourseActivity Alert Setting";
 
   /** The {@code TAG} */
   private static final String TAG_ADD_EDIT_COURSE_ACTIVITY =
@@ -445,7 +445,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
     // Create a MaterialDatePicker Builder instance
     Builder<Long> courseStartAlarmDatePickerBuilder = Builder.datePicker();
     // Set the title text
-    courseStartAlarmDatePickerBuilder.setTitleText("Select a course start alarm date");
+    courseStartAlarmDatePickerBuilder.setTitleText("Select a course start alert date");
     // Build the courseStartAlarmDatePicker
     MaterialDatePicker<Long> courseStartAlarmDatePicker = courseStartAlarmDatePickerBuilder.build();
     // Show the date picker
@@ -523,7 +523,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
             MaterialTimePicker.Builder courseStartAlarmTimePickerBuilder =
                 new MaterialTimePicker.Builder();
             // Set the title text
-            courseStartAlarmTimePickerBuilder.setTitleText("Select a course start alarm time");
+            courseStartAlarmTimePickerBuilder.setTitleText("Select a course start alert time");
             // Set the input mode
             courseStartAlarmTimePickerBuilder.setInputMode(MaterialTimePicker.INPUT_MODE_CLOCK);
             // Set the Time format
@@ -543,7 +543,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
     // Create a MaterialDatePicker Builder instance
     Builder<Long> courseEndAlarmDatePickerBuilder = Builder.datePicker();
     // Set the title text
-    courseEndAlarmDatePickerBuilder.setTitleText("Select a course end alarm date");
+    courseEndAlarmDatePickerBuilder.setTitleText("Select a course end alert date");
     // Build the courseEndAlarmDatePicker
     MaterialDatePicker<Long> courseEndAlarmDatePicker = courseEndAlarmDatePickerBuilder.build();
     // Show the date picker
@@ -632,7 +632,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
             MaterialTimePicker.Builder courseEndAlarmTimePickerBuilder =
                 new MaterialTimePicker.Builder();
             // Set the title text
-            courseEndAlarmTimePickerBuilder.setTitleText("Select a course end alarm time");
+            courseEndAlarmTimePickerBuilder.setTitleText("Select a course end alert time");
             // Set the input mode
             courseEndAlarmTimePickerBuilder.setInputMode(MaterialTimePicker.INPUT_MODE_CLOCK);
             // Set the Time format
@@ -720,7 +720,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
         || courseStatus.trim().isEmpty()) {
       // If any field is empty, display a toast error message
       Toast.makeText(
-              this, "All fields except course note and alarms are required", Toast.LENGTH_SHORT)
+              this, "All fields except course note and alerts are required", Toast.LENGTH_SHORT)
           .show();
       return;
     }
@@ -807,7 +807,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
               AlarmManager.RTC_WAKEUP, triggerStartDateTime, startAlarmIntent);
           // Show a confirmation message that the alarm was set
           Toast.makeText(
-                  this, "Course Start Alarm set for " + startDateString + "!", Toast.LENGTH_SHORT)
+                  this, "Course Start Alert set for " + startDateString + "!", Toast.LENGTH_SHORT)
               .show();
         }
       } catch (ParseException e) {
@@ -818,7 +818,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
       }
 
     } else {
-      Log.i(TAG_FOR_TIME, "Course Start Alarm not set...cancelling...");
+      Log.i(TAG_FOR_TIME, "Course Start Alert not set...cancelling...");
       course.setCourseStartAlarmDatetime(null);
       startIntent = new Intent(context, CourseAlertReceiver.class);
       // Create the PendingIntent to cancel the alarm
@@ -831,9 +831,9 @@ public class AddEditCourseActivity extends AppCompatActivity {
       // Cancel the alarm with the cancelIntent
       alarmManager.cancel(cancelIntent);
       // Show a confirmation message that the alarm was cancelled
-      Toast.makeText(this, "Course Start Alarm cancelled", Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, "Course Start Alert cancelled", Toast.LENGTH_SHORT).show();
       Log.i(
-          TAG_ADD_EDIT_COURSE_ACTIVITY, "scheduleCourseStartAlert: Course Start alarm cancelled!");
+          TAG_ADD_EDIT_COURSE_ACTIVITY, "scheduleCourseStartAlert: Course Start alert cancelled!");
     }
   }
 
@@ -866,20 +866,20 @@ public class AddEditCourseActivity extends AppCompatActivity {
         if (endDateString != null && !endDateString.toString().isEmpty()) {
           long triggerEndDateTime = endDateString.getTime();
 
-          Log.i("Set End Alarm", "Trigger Date Time End Alarm: " + triggerEndDateTimeString);
+          Log.i("Set End Alert", "Trigger Date Time End Alert: " + triggerEndDateTimeString);
 
           // Set the alarm
           alarmManager.setExactAndAllowWhileIdle(
               AlarmManager.RTC_WAKEUP, triggerEndDateTime, endAlarmIntent);
 
           Toast.makeText(
-                  this, "Course End Alarm set for " + endDateString + "!", Toast.LENGTH_SHORT)
+                  this, "Course End Alert set for " + endDateString + "!", Toast.LENGTH_SHORT)
               .show();
         }
       } catch (ParseException e) {
         Toast.makeText(this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
         if (!Objects.requireNonNull(e.getMessage()).isEmpty())
-          Log.e("Set Alarm Error", e.getMessage());
+          Log.e("Set Alert Error", e.getMessage());
       }
 
     } else {
@@ -895,8 +895,8 @@ public class AddEditCourseActivity extends AppCompatActivity {
               PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
       // Cancel the alarm
       alarmManager.cancel(cancelIntent);
-      Toast.makeText(this, "Course End Alarm cancelled", Toast.LENGTH_SHORT).show();
-      Log.i(TAG_ADD_EDIT_COURSE_ACTIVITY, "scheduleCourseEndAlert: Course End alarm cancelled!");
+      Toast.makeText(this, "Course End Alert cancelled", Toast.LENGTH_SHORT).show();
+      Log.i(TAG_ADD_EDIT_COURSE_ACTIVITY, "scheduleCourseEndAlert: Course End alert cancelled!");
     }
   }
 

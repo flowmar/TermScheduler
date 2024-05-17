@@ -628,7 +628,9 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
         || courseName.trim().isEmpty()
         || termName.trim().isEmpty()) {
       // If any field is empty, display a toast error message
-      Toast.makeText(this, "All fields are required except for alarms", Toast.LENGTH_SHORT).show();
+      Toast.makeText(
+              this, "All fields are required except for start and end alerts", Toast.LENGTH_SHORT)
+          .show();
       return;
     }
 
@@ -721,10 +723,10 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
               AlarmManager.RTC_WAKEUP, triggerStartDateTime, startAlarmIntent);
 
           // Show a confirmation message that the alarm was set
-          Log.i(TAG_FOR_TIME, "Assessment Start Alarm set for " + startDateString + "!");
+          Log.i(TAG_FOR_TIME, "Assessment Start Alert set for " + startDateString + "!");
           Toast.makeText(
                   this,
-                  "Assessment Start Alarm for "
+                  "Assessment Start Alert for "
                       + editedAssessment.getCourseName()
                       + " set for "
                       + startDateString
@@ -744,7 +746,7 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
       // If no alarm is set, cancel the alarm
       Log.i(
           TAG_FOR_TIME,
-          "Assessment Start Alarm for " + editedAssessment.getAssessmentTitle() + " cancelled!");
+          "Assessment Start Alert for " + editedAssessment.getAssessmentTitle() + " cancelled!");
 
       editedAssessment.setAssessmentStartDateTimeAlarm(null);
 
@@ -761,12 +763,12 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
 
       Toast.makeText(
               this,
-              "Assessment Start Alarm for " + editedAssessment.getAssessmentTitle() + " cancelled!",
+              "Assessment Start Alert for " + editedAssessment.getAssessmentTitle() + " cancelled!",
               Toast.LENGTH_SHORT)
           .show();
       Log.i(
           TAG_ADD_EDIT_ASSESSMENT_ACTIVITY,
-          "scheduleAssessmentStartAlert: Course Start Alarm cancelled!");
+          "scheduleAssessmentStartAlert: Course Start Alert cancelled!");
     }
   }
 
@@ -805,10 +807,10 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
               AlarmManager.RTC_WAKEUP, triggerEndDateTime, endAlarmIntent);
 
           // Show a confirmation message that the alarm was set
-          Log.i(TAG_FOR_TIME, "Alarm set for" + endDateString + "!");
+          Log.i(TAG_FOR_TIME, "Alert set for" + endDateString + "!");
           Toast.makeText(
                   this,
-                  "Assessment End Alarm for "
+                  "Assessment End Alert for "
                       + editedAssessment.getAssessmentTitle()
                       + " set for "
                       + endDateString
@@ -825,7 +827,7 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
       // If no alarm is set, cancel the alarm
       Log.i(
           TAG_FOR_TIME,
-          "Assessment End Alarm for " + editedAssessment.getAssessmentTitle() + "is not set!");
+          "Assessment End Alert for " + editedAssessment.getAssessmentTitle() + "is not set!");
       editedAssessment.setAssessmentEndDateTimeAlarm(null);
 
       // Create the PendingIntent to cancel the alarm
@@ -840,12 +842,12 @@ public class AddEditAssessmentActivity extends AppCompatActivity {
       alarmManager.cancel(cancelIntent);
       Toast.makeText(
               this,
-              "Assessment End Alarm for " + editedAssessment.getAssessmentTitle() + " cancelled!",
+              "Assessment End Alert for " + editedAssessment.getAssessmentTitle() + " cancelled!",
               Toast.LENGTH_SHORT)
           .show();
       Log.i(
           TAG_ADD_EDIT_ASSESSMENT_ACTIVITY,
-          "scheduleAssessmentEndAlert: Course End Alarm cancelled!");
+          "scheduleAssessmentEndAlert: Course End Alert cancelled!");
     }
   }
 
