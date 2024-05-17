@@ -6,12 +6,7 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
 import com.ebookfrenzy.termscheduler.terms.Term;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /******************
  * Project: TermScheduler
@@ -21,278 +16,193 @@ import java.util.Date;
  *
  *******************/
 @Entity(
-        tableName = "courses", foreignKeys = {
-		@ForeignKey(entity = Term.class, parentColumns = "term_id",
-					childColumns = "termId", onDelete =
-							ForeignKey.RESTRICT)
-}, indices = {@Index("termId")})
-public class Course
-	{
-		//**********************************************Fields********************************************/
-		@PrimaryKey(autoGenerate = true)
-		@ColumnInfo(name = "course_id")
-		private int id;
+    tableName = "courses",
+    foreignKeys = {
+      @ForeignKey(
+          entity = Term.class,
+          parentColumns = "term_id",
+          childColumns = "termId",
+          onDelete = ForeignKey.RESTRICT)
+    },
+    indices = {@Index("termId")})
+public class Course {
+  // **********************************************Fields********************************************/
+  @PrimaryKey(autoGenerate = true)
+  @ColumnInfo(name = "course_id")
+  private int id;
 
-		@ColumnInfo(name = "course_name")
-		private String courseName;
+  @ColumnInfo(name = "course_name")
+  private String courseName;
 
-		@ColumnInfo(name = "status")
-		private String status;
+  @ColumnInfo(name = "status")
+  private String status;
 
-		@ColumnInfo(name = "instructor_name")
-		private String instructorName;
+  @ColumnInfo(name = "instructor_name")
+  private String instructorName;
 
-		@ColumnInfo(name = "instructor_phone_number")
-		private String instructorPhoneNumber;
+  @ColumnInfo(name = "instructor_phone_number")
+  private String instructorPhoneNumber;
 
-		@ColumnInfo(name = "instructor_email")
-		private String instructorEmail;
+  @ColumnInfo(name = "instructor_email")
+  private String instructorEmail;
 
-		@ColumnInfo(name = "course_note")
-		@Nullable
-		private String courseNote;
+  @ColumnInfo(name = "course_note")
+  @Nullable
+  private String courseNote;
 
-		@ColumnInfo(name = "termId")
-		private int termId;
+  @ColumnInfo(name = "termId")
+  private int termId;
 
-		@ColumnInfo(name = "termName")
-		private String termName;
+  @ColumnInfo(name = "termName")
+  private String termName;
 
-		@ColumnInfo(name = "course_start_date")
-		private String startDate;
+  @ColumnInfo(name = "course_start_date")
+  private String startDate;
 
-		@ColumnInfo(name = "course_end_date")
-		private String endDate;
+  @ColumnInfo(name = "course_end_date")
+  private String endDate;
 
-		@ColumnInfo(name = "is_course_start_alarm_set")
-		private boolean isCourseStartAlarmSet;
+  @ColumnInfo(name = "course_start_alarm_datetime")
+  private String courseStartAlarmDatetime;
 
-		@ColumnInfo(name = "is_course_end_alarm_set")
-		private boolean isCourseEndAlarmSet;
+  @ColumnInfo(name = "course_end_alarm_datetime")
+  private String courseEndAlarmDatetime;
 
-		@ColumnInfo(name = "course_start_alarm_datetime")
-		private String courseStartAlarmDatetime;
+  // **********************************************Constructors********************************************/
+  public Course(
+      String courseName,
+      String startDate,
+      String endDate,
+      String status,
+      String instructorName,
+      String instructorPhoneNumber,
+      String instructorEmail,
+      @Nullable String courseNote,
+      String termName,
+      int termId,
+      String courseStartAlarmDatetime,
+      String courseEndAlarmDatetime) {
 
-		@ColumnInfo(name = "course_end_alarm_datetime")
-		private String courseEndAlarmDatetime;
+    this.courseName = courseName;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.status = status;
+    this.instructorName = instructorName;
+    this.instructorPhoneNumber = instructorPhoneNumber;
+    this.instructorEmail = instructorEmail;
+    this.courseNote = courseNote;
+    this.termName = termName;
+    this.termId = termId;
+    this.courseStartAlarmDatetime = courseStartAlarmDatetime;
+    this.courseEndAlarmDatetime = courseEndAlarmDatetime;
+  }
 
+  public Course() {}
 
+  public String getCourseStartAlarmDatetime() {
+    return courseStartAlarmDatetime;
+  }
 
+  public void setCourseStartAlarmDatetime(String courseStartAlarmDatetime) {
+    this.courseStartAlarmDatetime = courseStartAlarmDatetime;
+  }
 
-		//**********************************************Constructors********************************************/
-		public Course	(
-				String courseName,
-				String startDate,
-				String endDate,
-				String status,
-				String instructorName,
-				String instructorPhoneNumber,
-				String instructorEmail,
-				@Nullable String courseNote,
-				String termName,
-				int termId,
-				boolean isCourseStartAlarmSet,
-				boolean isCourseEndAlarmSet,
-				String courseStartAlarmDatetime,
-				String courseEndAlarmDatetime
+  // **********************************************Methods********************************************/
 
-						)
-			{
+  public String getCourseEndAlarmDatetime() {
+    return courseEndAlarmDatetime;
+  }
 
-				this.courseName					= courseName;
-				this.startDate					= startDate;
-				this.endDate					= endDate;
-				this.status						= status;
-				this.instructorName				= instructorName;
-				this.instructorPhoneNumber		= instructorPhoneNumber;
-				this.instructorEmail			= instructorEmail;
-				this.courseNote					= courseNote;
-				this.termName					= termName;
-				this.termId						= termId;
-				this.isCourseStartAlarmSet		= isCourseStartAlarmSet;
-				this.isCourseEndAlarmSet		= isCourseEndAlarmSet;
-				this.courseStartAlarmDatetime	= courseStartAlarmDatetime;
-				this.courseEndAlarmDatetime		= courseEndAlarmDatetime;
+  public void setCourseEndAlarmDatetime(String courseEndAlarmDatetime) {
+    this.courseEndAlarmDatetime = courseEndAlarmDatetime;
+  }
 
-			}
+  public int getId() {
+    return id;
+  }
 
-		public Course() {}
+  public void setId(int id) {
+    this.id = id;
+  }
 
-		static long getStartDateAsLong(String startDate) throws ParseException
-			{
-				// Create a SimpleDateFormat to parse the date entered by the user
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+  public String getCourseName() {
+    return courseName;
+  }
 
-				// Parse the date
-				Date date = sdf.parse(startDate);
+  public void setCourseName(String courseName) {
+    this.courseName = courseName;
+  }
 
-				// Get the Unix timestamp
-				long timestamp = date.getTime() / 1000;
+  public String getTermName() {
+    return termName;
+  }
 
-				return timestamp;
-			}
+  public void setTermName(String termName) {
+    this.termName = termName;
+  }
 
-		static long getEndDateAsLong(String endDate) throws ParseException
-			{
-				// Create a SimpleDateFormat to parse the date entered by the user
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+  String getStartDate() {
+    return startDate;
+  }
 
-				// Parse the date
-				Date date = sdf.parse(endDate);
+  void setStartDate(String startDate) {
+    this.startDate = startDate;
+  }
 
-				// Get the Unix timestamp
-				long timestamp = date.getTime() / 1000;
+  String getEndDate() {
+    return endDate;
+  }
 
-				return timestamp;
-			}
+  void setEndDate(String endDate) {
+    this.endDate = endDate;
+  }
 
-		public String getCourseStartAlarmDatetime()
-			{
-				return courseStartAlarmDatetime;
-			}
+  String getStatus() {
+    return status;
+  }
 
-		public void setCourseStartAlarmDatetime(String courseStartAlarmDatetime)
-			{
-                this.courseStartAlarmDatetime = courseStartAlarmDatetime;
-			}
+  void setStatus(String status) {
+    this.status = status;
+  }
 
-		//**********************************************Methods********************************************/
+  String getInstructorName() {
+    return instructorName;
+  }
 
-		public String getCourseEndAlarmDatetime()
-			{
-				return courseEndAlarmDatetime;
-			}
+  void setInstructorName(String instructorName) {
+    this.instructorName = instructorName;
+  }
 
-		public void setCourseEndAlarmDatetime(String courseEndAlarmDatetime)
-			{
-                this.courseEndAlarmDatetime = courseEndAlarmDatetime;
-			}
+  String getInstructorPhoneNumber() {
+    return instructorPhoneNumber;
+  }
 
-		public int getId()
-			{
-				return id;
-			}
+  void setInstructorPhoneNumber(String instructorPhoneNumber) {
+    this.instructorPhoneNumber = instructorPhoneNumber;
+  }
 
-		public void setId(int id)
-			{
-                this.id = id;
-			}
+  String getInstructorEmail() {
+    return instructorEmail;
+  }
 
-		public String getCourseName()
-			{
-				return courseName;
-			}
+  void setInstructorEmail(String instructorEmail) {
+    this.instructorEmail = instructorEmail;
+  }
 
-		public void setCourseName(String courseName)
-			{
-                this.courseName = courseName;
-			}
+  @Nullable
+  public String getCourseNote() {
+    return courseNote;
+  }
 
-		public String getTermName()
-			{
-				return termName;
-			}
+  void setCourseNote(@Nullable String courseNote) {
+    this.courseNote = courseNote;
+  }
 
-		public void setTermName(String termName)
-			{
-                this.termName = termName;
-			}
+  int getTermId() {
+    return termId;
+  }
 
-		String getStartDate()
-			{
-				return startDate;
-			}
-
-		void setStartDate(String startDate)
-			{
-                this.startDate = startDate;
-			}
-
-		String getEndDate()
-			{
-				return endDate;
-			}
-
-		void setEndDate(String endDate)
-			{
-                this.endDate = endDate;
-			}
-
-		String getStatus()
-			{
-				return status;
-			}
-
-		void setStatus(String status)
-			{
-                this.status = status;
-			}
-
-		String getInstructorName()
-			{
-				return instructorName;
-			}
-
-		void setInstructorName(String instructorName)
-			{
-                this.instructorName = instructorName;
-			}
-
-		String getInstructorPhoneNumber()
-			{
-				return instructorPhoneNumber;
-			}
-
-		void setInstructorPhoneNumber(String instructorPhoneNumber)
-			{
-                this.instructorPhoneNumber = instructorPhoneNumber;
-			}
-
-		String getInstructorEmail()
-			{
-				return instructorEmail;
-			}
-
-		void setInstructorEmail(String instructorEmail)
-			{
-                this.instructorEmail = instructorEmail;
-			}
-
-		@Nullable
-		public String getCourseNote()
-			{
-				return courseNote;
-			}
-
-		void setCourseNote(@Nullable String courseNote)
-			{
-                this.courseNote = courseNote;
-			}
-
-		int getTermId()
-			{
-				return termId;
-			}
-
-		void setTermId(int termId)
-			{
-                this.termId = termId;
-			}
-
-        public boolean isCourseStartAlarmSet() {
-            return isCourseStartAlarmSet;
-        }
-
-        public void setCourseStartAlarmSet(boolean courseStartAlarmSet) {
-            isCourseStartAlarmSet = courseStartAlarmSet;
-        }
-
-        public boolean isCourseEndAlarmSet() {
-            return isCourseEndAlarmSet;
-        }
-
-        public void setCourseEndAlarmSet(boolean courseEndAlarmSet) {
-            isCourseEndAlarmSet = courseEndAlarmSet;
-        }
-
-	}
+  void setTermId(int termId) {
+    this.termId = termId;
+  }
+}

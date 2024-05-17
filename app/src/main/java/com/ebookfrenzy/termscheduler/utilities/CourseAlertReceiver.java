@@ -20,13 +20,13 @@ public class CourseAlertReceiver extends BroadcastReceiver {
       "com.ebookfrenzy.termscheduler.course_notification_channel";
 
   /** The {@code TAG_COURSE_A} */
-  private final String TAG_COURSE_ALERT_RECEIVER = CourseAlertReceiver.class.getSimpleName();
+  private final String TAG_COURSE_ALERT_RECEIVER = "CourseAlertReceiver.java";
 
   @Override
   public void onReceive(Context context, Intent intent) {
 
     // Get info from the Intent that the AlarmManager sent to this receiver
-    String courseId = intent.getStringExtra("COURSE_ID");
+    int courseId = intent.getIntExtra("COURSE_ID", -1);
     String courseName = intent.getStringExtra("COURSE_NAME");
     String alertTitle = intent.getStringExtra("ALERT_TITLE");
     String alertMessage = intent.getStringExtra("ALERT_MESSAGE");
@@ -48,9 +48,9 @@ public class CourseAlertReceiver extends BroadcastReceiver {
             .build();
 
     Log.i(TAG_COURSE_ALERT_RECEIVER, "onReceive: about to show a notification");
-    if (courseId != null) {
+    if (courseId != -1) {
       try {
-        NotificationManagerCompat.from(context).notify(courseId.hashCode(), notification);
+        NotificationManagerCompat.from(context).notify(("" + courseId).hashCode(), notification);
       } catch (SecurityException e) {
         Log.e("CourseAlertReceiver onReceive Error", e.getMessage());
       }
@@ -83,38 +83,4 @@ public class CourseAlertReceiver extends BroadcastReceiver {
       }
     }
   }
-
-  /*
-   private void showNotification(Context context, String title, String message, int notificationId)
-       {
-
-           // Create a notification
-           NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
-           // Create a NotificationBuilder
-           NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
-                   .setSmallIcon(R.drawable.notification_icon)
-                   .setContentText(message)
-                   .setContentTitle(title)
-                   .setPriority(NotificationCompat.PRIORITY_HIGH)
-                   .setAutoCancel(true); // Dismiss notification after tap
-
-           // Add an intent to launch an activity on notification tap
-           Intent tapIntent = new Intent(context, MainActivity.class);
-           PendingIntent pendingIntent =
-                   PendingIntent.getActivity(context, 0, tapIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-           notificationBuilder.setContentIntent(pendingIntent);
-
-
-           // Request code for the notification
-           int requestCode = 3000;
-
-           if (notificationManager != null)
-               {
-                   notificationManager.notify(requestCode, notificationBuilder.build());
-               }
-
-       }
-  */
-
 }

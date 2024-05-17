@@ -1,11 +1,11 @@
 package com.ebookfrenzy.termscheduler.courses;
 
-import android.Manifest;
+import android.Manifest.permission;
 import android.app.AlarmManager;
-import android.app.AlarmManager.AlarmClockInfo;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,8 +17,10 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 import com.ebookfrenzy.termscheduler.R;
 import com.ebookfrenzy.termscheduler.databinding.ActivityAddEditCourseBinding;
@@ -33,6 +35,7 @@ import com.google.android.material.timepicker.TimeFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -47,44 +50,69 @@ import java.util.TimeZone;
  */
 public class AddEditCourseActivity extends AppCompatActivity {
 
-  /** The {@code EXTRA_COURSE_NAME} */
-  static final String EXTRA_COURSE_NAME = TAG + "EXTRA_COURSE_NAME";
-  /** The {@code EXTRA_COURSE_START_DATE} */
-  static final String EXTRA_COURSE_START_DATE = TAG + "EXTRA_COURSE_START_DATE";
-  /** The {@code EXTRA_COURSE_END_DATE} */
-  static final String EXTRA_COURSE_END_DATE = TAG + "EXTRA_COURSE_END_DATE";
-  /** The {@code EXTRA_COURSE_INSTRUCTOR_NAME} */
-  static final String EXTRA_COURSE_INSTRUCTOR_NAME = TAG + "EXTRA_COURSE_INSTRUCTOR_NAME";
-  /** The {@code EXTRA_COURSE_INSTRUCTOR_EMAIL} */
-  static final String EXTRA_COURSE_INSTRUCTOR_EMAIL = TAG + "EXTRA_COURSE_INSTRUCTOR_EMAIL";
-  /** The {@code EXTRA_COURSE_INSTRUCTOR_PHONE} */
-  static final String EXTRA_COURSE_INSTRUCTOR_PHONE = TAG + "EXTRA_COURSE_INSTRUCTOR_PHONE";
-  /** The {@code EXTRA_COURSE_STATUS} */
-  static final String EXTRA_COURSE_STATUS = TAG + "EXTRA_COURSE_STATUS";
-  /** The {@code EXTRA_COURSE_TERM_ID} */
-  static final String EXTRA_COURSE_TERM_ID = TAG + "EXTRA_COURSE_TERM_ID";
-  /** The {@code EXTRA_COURSE_TERM_NAME} */
-  static final String EXTRA_COURSE_TERM_NAME = TAG + "EXTRA_COURSE_TERM_NAME";
-  /** The {@code EXTRA_COURSE_NOTE} */
-  static final String EXTRA_COURSE_NOTE = TAG + "EXTRA_COURSE_NOTE";
-  /** The {@code EXTRA_IS_COURSE_START_ALARM_SET} */
-  static final String EXTRA_IS_COURSE_START_ALARM_SET = TAG + "EXTRA_IS_START_ALARM_SET";
-  /** The {@code EXTRA_IS_COURSE_END_ALARM_SET} */
-  static final String EXTRA_IS_COURSE_END_ALARM_SET = TAG + "EXTRA_IS_END_ALARM_SET";
-  /** The {@code EXTRA_COURSE_START_ALARM_DATETIME} */
-  static final String EXTRA_COURSE_START_ALARM_DATETIME = TAG + "EXTRA_START_ALARM_DATETIME";
-  /** The {@code EXTRA_COURSE_END_ALARM_DATETIME} */
-  static final String EXTRA_COURSE_END_ALARM_DATETIME = TAG + "EXTRA_END_ALARM_DATETIME";
-  /** The {@code EXTRA_COURSE_ID} */
-  static final String EXTRA_COURSE_ID = TAG + "EXTRA_COURSE_ID";
+  /** The {@code PERMISSIONS_REQUEST_CODE} */
+  public static final int PERMISSIONS_REQUEST_CODE = 1234;
+
   /** The {@code DFORMAT} */
   private static final String DFORMAT = "yyyy-MM-dd";
-  /** The {@code REQUEST_CODE_ALARM_PERMISSION} */
-  private static final int REQUEST_CODE_ALARM_PERMISSION = 1238804;
+
   /** The {@code TAG_FOR_TIME} */
   private static final String TAG_FOR_TIME = "AddEditCourseActivity Alarm Setting";
+
   /** The {@code TAG} */
-  private final String TAG = "com.ebookfrenzy.termscheduler.courses.AddEditCourseActivity";
+  private static final String TAG_ADD_EDIT_COURSE_ACTIVITY =
+      "com.ebookfrenzy.termscheduler.courses.AddEditCourseActivity";
+
+  /** The {@code EXTRA_COURSE_NAME} */
+  static final String EXTRA_COURSE_NAME = TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_NAME";
+
+  /** The {@code EXTRA_COURSE_START_DATE} */
+  static final String EXTRA_COURSE_START_DATE =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_START_DATE";
+
+  /** The {@code EXTRA_COURSE_END_DATE} */
+  static final String EXTRA_COURSE_END_DATE =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_END_DATE";
+
+  /** The {@code EXTRA_COURSE_INSTRUCTOR_NAME} */
+  static final String EXTRA_COURSE_INSTRUCTOR_NAME =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_INSTRUCTOR_NAME";
+
+  /** The {@code EXTRA_COURSE_INSTRUCTOR_EMAIL} */
+  static final String EXTRA_COURSE_INSTRUCTOR_EMAIL =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_INSTRUCTOR_EMAIL";
+
+  /** The {@code EXTRA_COURSE_INSTRUCTOR_PHONE} */
+  static final String EXTRA_COURSE_INSTRUCTOR_PHONE =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_INSTRUCTOR_PHONE";
+
+  /** The {@code EXTRA_COURSE_STATUS} */
+  static final String EXTRA_COURSE_STATUS = TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_STATUS";
+
+  /** The {@code EXTRA_COURSE_TERM_ID} */
+  static final String EXTRA_COURSE_TERM_ID = TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_TERM_ID";
+
+  /** The {@code EXTRA_COURSE_TERM_NAME} */
+  static final String EXTRA_COURSE_TERM_NAME =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_TERM_NAME";
+
+  /** The {@code EXTRA_COURSE_NOTE} */
+  static final String EXTRA_COURSE_NOTE = TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_NOTE";
+
+  /** The {@code EXTRA_COURSE_START_ALARM_DATETIME} */
+  static final String EXTRA_COURSE_START_ALARM_DATETIME =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_START_ALARM_DATETIME";
+
+  /** The {@code EXTRA_COURSE_END_ALARM_DATETIME} */
+  static final String EXTRA_COURSE_END_ALARM_DATETIME =
+      TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_END_ALARM_DATETIME";
+
+  /** The {@code EXTRA_COURSE_ID} */
+  static final String EXTRA_COURSE_ID = TAG_ADD_EDIT_COURSE_ACTIVITY + "EXTRA_COURSE_ID";
+
+  /** The {@code alarmManager} */
+  private AlarmManager alarmManager;
+
   /** The {@code courseEndAlarmDatetime} */
   private String courseEndAlarmDatetime;
 
@@ -134,6 +162,65 @@ public class AddEditCourseActivity extends AppCompatActivity {
     buttonSelectCourseEndAlarm = binding.setCourseEndAlarmButton;
     buttonCancelCourseStartAlarm = binding.courseStartAlarmCancelButton;
     buttonCancelCourseEndAlarm = binding.courseEndAlarmCancelButton;
+
+    // Instantiate the alarm manager
+    alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+    // Check to see if the POST_NOTIFICATIONS permission is granted
+    checkNotificationsPermission();
+  }
+
+  private void checkNotificationsPermission() {
+    // Check for POST_NOTIFICATIONS permission
+    if (ContextCompat.checkSelfPermission(this, permission.POST_NOTIFICATIONS)
+        != PackageManager.PERMISSION_GRANTED) {
+      Log.i("Permission Check", "checkNotificationsPermission: Permission not yet granted");
+      requestPermissions();
+    } else {
+      Log.i("Permission Check", "POST_NOTIFICATION permission already granted");
+    }
+  }
+
+  private void requestPermissions() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+      if (ActivityCompat.shouldShowRequestPermissionRationale(
+          this, permission.POST_NOTIFICATIONS)) {
+        // Show an explanation to the user as to why the app needs this permission
+        new AlertDialog.Builder(this)
+            .setTitle("Why do we need permission?")
+            .setMessage("This permission is needed to show notifications in the foreground.")
+            .setNegativeButton("Cancel", null)
+            .setPositiveButton(
+                "OK",
+                (dialog, which) ->
+                    ActivityCompat.requestPermissions(
+                        AddEditCourseActivity.this,
+                        new String[] {permission.POST_NOTIFICATIONS},
+                        PERMISSIONS_REQUEST_CODE))
+            .create()
+            .show();
+      } else {
+        // No explanation needed, request the permission
+        ActivityCompat.requestPermissions(
+            this, new String[] {permission.POST_NOTIFICATIONS}, PERMISSIONS_REQUEST_CODE);
+      }
+    }
+  }
+
+  @Override
+  public void onRequestPermissionsResult(
+      int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    if (requestCode == PERMISSIONS_REQUEST_CODE
+        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+      // Permission has been granted. Do something here.
+      Log.i("Permission Check", "onRequestPermissionsResult: Permission granted.");
+    } else if (shouldShowRequestPermissionRationale(Arrays.toString(permissions))) {
+      requestPermissions();
+    } else {
+      // Permission request was denied.
+      Log.i("Permission Check", "onRequestPermissionsResult: Permission request denied.");
+    }
   }
 
   /** On start. */
@@ -173,7 +260,8 @@ public class AddEditCourseActivity extends AppCompatActivity {
         binding.addEditCourseTextViewCourseNote.setText(intent.getStringExtra(EXTRA_COURSE_NOTE));
       }
 
-      if (intent.getBooleanExtra(EXTRA_IS_COURSE_START_ALARM_SET, false)) {
+      // Get the start and end alarms from the Intent and put them into the UI
+      if (intent.getStringExtra(EXTRA_COURSE_START_ALARM_DATETIME) != null) {
         binding.courseStartAlarmDateTimeTextView.setText(
             intent.getStringExtra(EXTRA_COURSE_START_ALARM_DATETIME));
         binding.courseStartAlarmCancelButton.setVisibility(View.VISIBLE);
@@ -181,7 +269,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
         setCourseStartAlarmCancelButtonClickListener();
       }
 
-      if (intent.getBooleanExtra(EXTRA_IS_COURSE_END_ALARM_SET, false)) {
+      if (intent.getStringExtra(EXTRA_COURSE_END_ALARM_DATETIME) != null) {
         binding.courseEndAlarmDateTimeTextView.setText(
             intent.getStringExtra(EXTRA_COURSE_END_ALARM_DATETIME));
         binding.courseEndAlarmCancelButton.setVisibility(View.VISIBLE);
@@ -192,6 +280,10 @@ public class AddEditCourseActivity extends AppCompatActivity {
       // Change the title in the ActionBar
       setTitle("Add Course");
     }
+
+    // Check for schedule alarm permissions
+    // Request alarm permission
+    if (checkScheduleAlarmPermission()) return;
 
     // Set up the DatePickers
     setUpStartDatePicker();
@@ -226,6 +318,10 @@ public class AddEditCourseActivity extends AppCompatActivity {
           buttonCancelCourseEndAlarm.setVisibility(View.INVISIBLE);
           buttonCancelCourseEndAlarm.setEnabled(false);
         });
+  }
+
+  private boolean checkScheduleAlarmPermission() {
+    return Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !alarmManager.canScheduleExactAlarms();
   }
 
   /**
@@ -326,8 +422,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
 
     if (!concatTerms.isEmpty()) {
       // Add all the terms to the menu
-      binding.addEditCourseTextviewSelectedTerm.setSimpleItems(
-          concatTerms.toArray(new String[concatTerms.size()]));
+      binding.addEditCourseTextviewSelectedTerm.setSimpleItems(concatTerms.toArray(new String[0]));
     }
   }
 
@@ -368,7 +463,6 @@ public class AddEditCourseActivity extends AppCompatActivity {
             myDate.setMinutes(myDate.getMinutes() + myDate.getTimezoneOffset());
             SimpleDateFormat sdf = new SimpleDateFormat(DFORMAT, Locale.US);
             String formattedDate = sdf.format(myDate);
-            // binding.courseStartAlarmDateTimeTextView.setText(formattedDate);
             showCourseStartAlarmTimePicker(formattedDate);
           }
 
@@ -476,7 +570,6 @@ public class AddEditCourseActivity extends AppCompatActivity {
             myDate.setMinutes(myDate.getMinutes() + myDate.getTimezoneOffset());
             SimpleDateFormat sdf = new SimpleDateFormat(DFORMAT, Locale.US);
             String formattedDate = sdf.format(myDate);
-            // binding.courseStartAlarmDateTimeTextView.setText(formattedDate);
             showCourseEndAlarmTimePicker(formattedDate);
           }
 
@@ -579,8 +672,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
   }
 
   private void saveCourse() {
-    boolean isCourseEndAlarmSet;
-    boolean isCourseStartAlarmSet;
+
     int courseId;
     CourseViewModel mCourseViewModel;
     String courseNote;
@@ -591,6 +683,7 @@ public class AddEditCourseActivity extends AppCompatActivity {
     String courseEndDate;
     String courseStartDate;
     String courseName;
+
     // Using the binding, extract the data entered by the user
     courseName = binding.addEditCourseEditTextCourseName.getText().toString();
     courseStartDate = binding.addEditCourseTextviewSelectedCourseStartDate.getText().toString();
@@ -607,20 +700,11 @@ public class AddEditCourseActivity extends AppCompatActivity {
     courseStatus = binding.addEditCourseTextViewCourseStatus.getText().toString();
     courseNote = binding.addEditCourseTextViewCourseNote.getText().toString();
 
-    // ! TODO: Run a function to set an Alarm using AlarmManager if these values are not equal to
-    // null or ""
-    // ! TODO: Edit Assessment Model
-    // ! TODO: Remove all old Assessment model code dealing with alarms
-    // ! TODO: Edit Add/Edit Assessment Activity to include the new alarm fields
-    // ! TODO: Edit the AssessmentViewModel to include the new alarm fields
-    // ! TODO: Set up click Listeners on the Add/Edit Assessment Activity to save to database, and
-    // to set alarms.
-
     courseStartAlarmDatetime = binding.courseStartAlarmDateTimeTextView.getText().toString();
     courseEndAlarmDatetime = binding.courseEndAlarmDateTimeTextView.getText().toString();
 
-    isCourseStartAlarmSet = !courseStartAlarmDatetime.isEmpty();
-    isCourseEndAlarmSet = !courseEndAlarmDatetime.isEmpty();
+    boolean isCourseStartAlarmSet = !courseStartAlarmDatetime.isEmpty();
+    boolean isCourseEndAlarmSet = !courseEndAlarmDatetime.isEmpty();
 
     Log.i("COURSE START ALARM", courseStartAlarmDatetime);
     Log.i("COURSE END ALARM", courseEndAlarmDatetime);
@@ -654,14 +738,18 @@ public class AddEditCourseActivity extends AppCompatActivity {
             courseNote,
             termName,
             termId,
-            isCourseStartAlarmSet,
-            isCourseEndAlarmSet,
             courseStartAlarmDatetime,
             courseEndAlarmDatetime);
     if (courseId != -1) {
 
-      // Create a new Course object using the data entered by the user
+      // Set the courseId of the editedCourse object with the courseId of the existing course
       editedCourse.setId(courseId);
+
+      // Schedule or cancel the start and end alarms
+      scheduleCourseStartAlert(
+          getApplicationContext(), editedCourse, !courseStartAlarmDatetime.isEmpty());
+      scheduleCourseEndAlert(
+          getApplicationContext(), editedCourse, !courseEndAlarmDatetime.isEmpty());
 
       // Get an instance of the CourseViewModel
       mCourseViewModel = new ViewModelProvider(this).get(CourseViewModel.class);
@@ -672,14 +760,8 @@ public class AddEditCourseActivity extends AppCompatActivity {
     } else {
       // Create a new object using the data entered by the user
 
-      // If the user has not selected a start alarm, cancel the alarm
-      // Otherwise schedule the alarm
-      isCourseStartAlarmSet = !courseStartAlarmDatetime.isEmpty();
+      // Schedule or cancel the start and end alarms
       scheduleCourseStartAlert(getApplicationContext(), editedCourse, isCourseStartAlarmSet);
-
-      // If the user has not selected an end alarm, cancel the alarm
-      // Otherwise schedule the alarm
-      isCourseEndAlarmSet = !courseEndAlarmDatetime.isEmpty();
       scheduleCourseEndAlert(getApplicationContext(), editedCourse, isCourseEndAlarmSet);
 
       // Get an instance of the CourseViewModel
@@ -691,33 +773,10 @@ public class AddEditCourseActivity extends AppCompatActivity {
   }
 
   private void scheduleCourseStartAlert(Context context, Course course, boolean isAlarmSet) {
-    // Get an instance of the alarmManager service
-    AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-
-    // Request alarm permission
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-      if (!alarmManager.canScheduleExactAlarms()) {
-        ActivityCompat.requestPermissions(
-            this,
-            new String[] {Manifest.permission.SCHEDULE_EXACT_ALARM},
-            REQUEST_CODE_ALARM_PERMISSION);
-        return;
-      }
-    }
-
+    // Create an Intent to send to the CourseAlertReceiver
+    Intent startIntent = getStartIntent(course);
     // If an alarm is set...
     if (isAlarmSet) {
-
-      // Create an Intent to send to the CourseAlertReceiver
-      Intent startIntent = new Intent(this, CourseAlertReceiver.class);
-
-      // Put the necessary Extras into the Intent
-      startIntent.putExtra("COURSE_ID", course.getId());
-      startIntent.putExtra("COURSE_NAME", course.getCourseName());
-      startIntent.putExtra("ALERT_TITLE", "Course Starting Soon!");
-      startIntent.putExtra(
-          "ALERT_MESSAGE", "Your course, " + course.getCourseName() + ", is starting soon!");
-      startIntent.putExtra("COURSE_ID", course.getId());
 
       // Create an instance of PendingIntent which will be used to send the broadcast to the
       // CourseAlertReceiver
@@ -733,25 +792,24 @@ public class AddEditCourseActivity extends AppCompatActivity {
       // Create a SimpleDateFormat instance to parse the string into a Date object
       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
 
-      // Create a long variable to hold the time in milliseconds
-      long triggerStartDateTime = 0;
-
       try {
         // Try to parse the string into a Date object
         Date startDateString = sdf.parse(triggerStartDateTimeString);
         // Get the time in milliseconds
-        if (startDateString != null) triggerStartDateTime = startDateString.getTime();
+        if (startDateString != null) {
+          long triggerStartDateTime = startDateString.getTime();
 
-        // Log the time in milliseconds
-        Log.i(TAG_FOR_TIME, "Trigger DateTime: " + triggerStartDateTime);
+          // Log the time in milliseconds
+          Log.i(TAG_FOR_TIME, "Trigger DateTime: " + triggerStartDateTime);
 
-        // Set the alarm
-        alarmManager.setExactAndAllowWhileIdle(
-            AlarmManager.RTC_WAKEUP, triggerStartDateTime, startAlarmIntent);
-
-        // Show a confirmation message that the alarm was set
-        Log.i(TAG_FOR_TIME, "Alarm set for " + startDateString + "....hope this works!");
-        Toast.makeText(this, "Alarm set for " + startDateString + "!", Toast.LENGTH_SHORT).show();
+          // Set the alarm
+          alarmManager.setExactAndAllowWhileIdle(
+              AlarmManager.RTC_WAKEUP, triggerStartDateTime, startAlarmIntent);
+          // Show a confirmation message that the alarm was set
+          Toast.makeText(
+                  this, "Course Start Alarm set for " + startDateString + "!", Toast.LENGTH_SHORT)
+              .show();
+        }
       } catch (ParseException e) {
         // Show an error message if the string cannot be parsed
         Toast.makeText(this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
@@ -760,9 +818,9 @@ public class AddEditCourseActivity extends AppCompatActivity {
       }
 
     } else {
-      Log.i(TAG_FOR_TIME, "Alarm not set...cancelling...");
-      courseStartAlarmDatetime = "";
-      Intent startIntent = new Intent(context, CourseAlertReceiver.class);
+      Log.i(TAG_FOR_TIME, "Course Start Alarm not set...cancelling...");
+      course.setCourseStartAlarmDatetime(null);
+      startIntent = new Intent(context, CourseAlertReceiver.class);
       // Create the PendingIntent to cancel the alarm
       PendingIntent cancelIntent =
           PendingIntent.getBroadcast(
@@ -773,32 +831,19 @@ public class AddEditCourseActivity extends AppCompatActivity {
       // Cancel the alarm with the cancelIntent
       alarmManager.cancel(cancelIntent);
       // Show a confirmation message that the alarm was cancelled
-      Toast.makeText(this, "Alarm cancelled", Toast.LENGTH_SHORT).show();
-      Log.d(TAG, "scheduleCourseStartAlert: alarm cancelled!");
+      Toast.makeText(this, "Course Start Alarm cancelled", Toast.LENGTH_SHORT).show();
+      Log.i(
+          TAG_ADD_EDIT_COURSE_ACTIVITY, "scheduleCourseStartAlert: Course Start alarm cancelled!");
     }
   }
 
   private void scheduleCourseEndAlert(
       Context applicationContext, Course course, boolean isEndAlarmSet) {
-
-    // Get an instance of the alarmManager service
-    AlarmManager alarmManager =
-        (AlarmManager) applicationContext.getSystemService(Context.ALARM_SERVICE);
-
-    // Request alarm permission
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-      if (!alarmManager.canScheduleExactAlarms()) {
-        ActivityCompat.requestPermissions(
-            this,
-            new String[] {Manifest.permission.SCHEDULE_EXACT_ALARM},
-            REQUEST_CODE_ALARM_PERMISSION);
-        return;
-      }
-    }
+    // Create an Intent to send to the CourseAlertReceiver
+    Intent endIntent = getEndIntent(course);
 
     if (isEndAlarmSet) {
-      // Create an Intent to send to the CourseAlertReceiver
-      Intent endIntent = new Intent(applicationContext, CourseAlertReceiver.class);
+
       // Create an instance of PendingIntent which will be used to send the broadcast to the
       // CourseAlertReceiver
       PendingIntent endAlarmIntent =
@@ -813,24 +858,24 @@ public class AddEditCourseActivity extends AppCompatActivity {
       // Create a SimpleDateFormat instance to parse the string into a Date object
       SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US);
 
-      // Create a long variable to hold the time in milliseconds
-      long triggerEndDateTime = 0;
-
       try {
         // Try to parse the string into a Date object
         Date endDateString = sdf.parse(triggerEndDateTimeString);
 
         // Get the time in milliseconds
-        if (endDateString != null && !endDateString.toString().isEmpty())
-          triggerEndDateTime = endDateString.getTime();
+        if (endDateString != null && !endDateString.toString().isEmpty()) {
+          long triggerEndDateTime = endDateString.getTime();
 
-        Log.i("Set End Alarm", "Trigger Date Time End Alarm: " + triggerEndDateTimeString);
+          Log.i("Set End Alarm", "Trigger Date Time End Alarm: " + triggerEndDateTimeString);
 
-        // Create an instance of AlarmClockInfo and set the alarm
-        AlarmClockInfo alarmClockInfo = new AlarmClockInfo(triggerEndDateTime, endAlarmIntent);
-        alarmManager.setAlarmClock(alarmClockInfo, endAlarmIntent);
+          // Set the alarm
+          alarmManager.setExactAndAllowWhileIdle(
+              AlarmManager.RTC_WAKEUP, triggerEndDateTime, endAlarmIntent);
 
-        Toast.makeText(this, "Alarm set for " + endDateString + "!", Toast.LENGTH_SHORT).show();
+          Toast.makeText(
+                  this, "Course End Alarm set for " + endDateString + "!", Toast.LENGTH_SHORT)
+              .show();
+        }
       } catch (ParseException e) {
         Toast.makeText(this, "Invalid date/time format.", Toast.LENGTH_SHORT).show();
         if (!Objects.requireNonNull(e.getMessage()).isEmpty())
@@ -838,8 +883,9 @@ public class AddEditCourseActivity extends AppCompatActivity {
       }
 
     } else {
-      courseEndAlarmDatetime = "";
-      Intent endIntent = new Intent(applicationContext, CourseAlertReceiver.class);
+      Log.i(TAG_FOR_TIME, "Course End Alarm not set...cancelling...");
+      course.setCourseEndAlarmDatetime(null);
+
       // Create the PendingIntent to cancel the alarm
       PendingIntent cancelIntent =
           PendingIntent.getBroadcast(
@@ -849,8 +895,37 @@ public class AddEditCourseActivity extends AppCompatActivity {
               PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
       // Cancel the alarm
       alarmManager.cancel(cancelIntent);
-      Toast.makeText(this, "Alarm cancelled", Toast.LENGTH_SHORT).show();
-      Log.d(TAG, "scheduleCourseEndAlert: alarm cancelled!");
+      Toast.makeText(this, "Course End Alarm cancelled", Toast.LENGTH_SHORT).show();
+      Log.i(TAG_ADD_EDIT_COURSE_ACTIVITY, "scheduleCourseEndAlert: Course End alarm cancelled!");
     }
+  }
+
+  @NonNull
+  private Intent getStartIntent(Course course) {
+    Intent startIntent = new Intent(this, CourseAlertReceiver.class);
+
+    // Put the necessary Extras into the Intent
+    startIntent.putExtra("COURSE_ID", course.getId());
+    startIntent.putExtra("COURSE_NAME", course.getCourseName());
+    startIntent.putExtra("ALERT_TITLE", "Course Starting Soon!");
+    startIntent.putExtra(
+        "ALERT_MESSAGE",
+        "Your course, " + course.getCourseName() + ", is starting on " + course.getStartDate());
+    return startIntent;
+  }
+
+  @NonNull
+  private Intent getEndIntent(Course course) {
+    // Create the end Intent to send to the CourseAlertReceiver
+    Intent endIntent = new Intent(this, CourseAlertReceiver.class);
+
+    // Put the necessary Extras into the Intent
+    endIntent.putExtra("COURSE_ID", course.getId());
+    endIntent.putExtra("COURSE_NAME", course.getCourseName());
+    endIntent.putExtra("ALERT_TITLE", "Course Ending Soon!");
+    endIntent.putExtra(
+        "ALERT_MESSAGE",
+        "Your course, " + course.getCourseName() + ", is ending on " + course.getEndDate() + "!");
+    return endIntent;
   }
 }

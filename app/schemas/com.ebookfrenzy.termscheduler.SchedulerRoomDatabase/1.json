@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4e78eea3e841c94d77c9317326632c8c",
+    "identityHash": "03e8d9d5cc5d0a17992f1cb4daef2c22",
     "entities": [
       {
         "tableName": "terms",
@@ -54,7 +54,7 @@
       },
       {
         "tableName": "courses",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`course_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `course_name` TEXT, `status` TEXT, `instructor_name` TEXT, `instructor_phone_number` TEXT, `instructor_email` TEXT, `course_note` TEXT, `termId` INTEGER NOT NULL, `termName` TEXT, `course_start_date` TEXT, `course_end_date` TEXT, `is_course_start_alarm_set` INTEGER NOT NULL, `is_course_end_alarm_set` INTEGER NOT NULL, `course_start_alarm_datetime` TEXT, `course_end_alarm_datetime` TEXT, FOREIGN KEY(`termId`) REFERENCES `terms`(`term_id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`course_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `course_name` TEXT, `status` TEXT, `instructor_name` TEXT, `instructor_phone_number` TEXT, `instructor_email` TEXT, `course_note` TEXT, `termId` INTEGER NOT NULL, `termName` TEXT, `course_start_date` TEXT, `course_end_date` TEXT, `course_start_alarm_datetime` TEXT, `course_end_alarm_datetime` TEXT, FOREIGN KEY(`termId`) REFERENCES `terms`(`term_id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
         "fields": [
           {
             "fieldPath": "id",
@@ -121,18 +121,6 @@
             "columnName": "course_end_date",
             "affinity": "TEXT",
             "notNull": false
-          },
-          {
-            "fieldPath": "isCourseStartAlarmSet",
-            "columnName": "is_course_start_alarm_set",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "isCourseEndAlarmSet",
-            "columnName": "is_course_end_alarm_set",
-            "affinity": "INTEGER",
-            "notNull": true
           },
           {
             "fieldPath": "courseStartAlarmDatetime",
@@ -293,7 +281,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4e78eea3e841c94d77c9317326632c8c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '03e8d9d5cc5d0a17992f1cb4daef2c22')"
     ]
   }
 }

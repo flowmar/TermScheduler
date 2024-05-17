@@ -4,32 +4,18 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	>
 
-    <permission android:name="com.ebookfrenzy.termscheduler.permission.SEND_SMS"/>
-
-    <uses-feature
-		android:name="android.hardware.telephony"
-		android:required="false"
-		/>
-
+	 <uses-feature
+		 android:name="android.hardware.telephony"
+		 android:required="false"
+		 />
     <uses-permission android:name="android.alarm.permission.SET_ALARM"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-	<uses-permission-sdk-23 android:name="android.permission.SEND_SMS"/>
-	<uses-permission-sdk-23
-		android:name="android.permission.POST_NOTIFICATIONS"/>
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.SENDTO"/>
-
-            <data android:scheme="mailto"/>
-
-            <category android:name="android.intent.category.DEFAULT"/>
-        </intent>
-    </queries>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
     <application
 		android:allowBackup="true"
@@ -42,29 +28,6 @@
 		android:theme="@style/Theme.TermScheduler"
 		tools:targetApi="33"
 		>
-        <receiver
-			android:name="com.ebookfrenzy.termscheduler.utilities.AssessmentAlertReceiver"
-			android:enabled="true"
-			android:exported="false"
-			>
-        </receiver>
-        <receiver
-			android:name="com.ebookfrenzy.termscheduler.utilities.BootReceiver"
-			android:enabled="false"
-			android:exported="true"
-			>
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
-            </intent-filter>
-        </receiver>
-        <receiver
-			android:name="com.ebookfrenzy.termscheduler.utilities.CourseAlertReceiver"
-			android:enabled="true"
-			android:exported="false"
-			>
-        </receiver>
-
         <activity
 			android:name=".notes.CourseNotesListActivity"
 			android:exported="false"
@@ -83,6 +46,7 @@
 			android:label="Add Course"
 			android:parentActivityName=".courses.CourseListActivity"
 			/>
+
         <activity
 			android:name=".terms.AddEditTermActivity"
 			android:exported="false"
@@ -117,6 +81,40 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <receiver
+			android:name="com.ebookfrenzy.termscheduler.utilities.AssessmentAlertReceiver"
+			android:enabled="true"
+			android:exported="false"
+			>
+        </receiver>
+        <receiver
+			android:name="com.ebookfrenzy.termscheduler.utilities.BootReceiver"
+			android:enabled="false"
+			android:exported="true"
+			>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+			android:name="com.ebookfrenzy.termscheduler.utilities.CourseAlertReceiver"
+			android:enabled="true"
+			android:exported="false"
+			>
+        </receiver>
     </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SENDTO"/>
+
+            <category android:name="android.intent.category.DEFAULT"/>
+
+            <data android:scheme="mailto"/>
+        </intent>
+    </queries>
+
+
 
 </manifest>

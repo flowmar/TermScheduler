@@ -6,7 +6,6 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
-
 import com.ebookfrenzy.termscheduler.courses.Course;
 
 /******************
@@ -17,179 +16,275 @@ import com.ebookfrenzy.termscheduler.courses.Course;
  *
  *******************/
 @Entity(
-        tableName = "assessments", foreignKeys = {
-        @ForeignKey(entity = Course.class, parentColumns = "course_id"
-                , childColumns = "courseId", onDelete = ForeignKey.RESTRICT)
-}, indices = {@Index("courseId"), @Index("termId")})
-public class Assessment
-    {
+    tableName = "assessments",
+    foreignKeys = {
+      @ForeignKey(
+          entity = Course.class,
+          parentColumns = "course_id",
+          childColumns = "courseId",
+          onDelete = ForeignKey.RESTRICT)
+    },
+    indices = {@Index("courseId"), @Index("termId")})
+public class Assessment {
 
-        //**********************************************Fields********************************************/
+  // **********************************************Fields********************************************/
 
+  /** The {@code id} */
+  @PrimaryKey(autoGenerate = true)
+  @ColumnInfo(name = "assessment_id")
+  private int id;
 
-        @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "assessment_id")
-        private int    id;
-        @ColumnInfo(name = "assessment_type")
-        private String assessmentType;
-        @ColumnInfo(name = "assessment_title")
-        private String assessmentTitle;
+  /** The {@code assessmentType} */
+  @ColumnInfo(name = "assessment_type")
+  private String assessmentType;
 
-        @ColumnInfo(name = "assessment_start_date")
-        private String assessmentStartDate;
+  /** The {@code assessmentTitle} */
+  @ColumnInfo(name = "assessment_title")
+  private String assessmentTitle;
 
-        @ColumnInfo(name = "assessment_end_date")
-        private String assessmentEndDate;
-        @ColumnInfo(name = "courseId")
-        private int    courseId;
-        @ColumnInfo(name = "courseName")
-        private String courseName;
-        @ColumnInfo(name = "termName")
-        private String termName;
-        @ColumnInfo(name = "termId")
-        private int    termId;
+  /** The {@code assessmentStartDate} */
+  @ColumnInfo(name = "assessment_start_date")
+  private String assessmentStartDate;
 
-        @ColumnInfo(name = "assessmentStartDateTimeAlarm")
-        private String assessmentStartDateTimeAlarm;
+  /** The {@code assessmentEndDate} */
+  @ColumnInfo(name = "assessment_end_date")
+  private String assessmentEndDate;
 
-        @ColumnInfo(name = "assessmentEndDateTimeAlarm")
-        private String assessmentEndDateTimeAlarm;
+  /** The {@code courseId} */
+  @ColumnInfo(name = "courseId")
+  private int courseId;
 
-        //**********************************************Constructors********************************************/
-        public Assessment(String assessmentType, String assessmentTitle, String assessmentStartDate, String assessmentEndDate, int courseId,
-                          String courseName, int termId, String termName, String assessmentStartDateTimeAlarm, String assessmentEndDateTimeAlarm)
-            {
-                this.assessmentType               = assessmentType;
-                this.assessmentTitle              = assessmentTitle;
-                this.assessmentStartDate          = assessmentStartDate;
-                this.assessmentEndDate            = assessmentEndDate;
-                this.courseId                     = courseId;
-                this.courseName                   = courseName;
-                this.termName                     = termName;
-                this.termId                       = termId;
-                this.assessmentStartDateTimeAlarm = assessmentStartDateTimeAlarm;
-                this.assessmentEndDateTimeAlarm   = assessmentEndDateTimeAlarm;
+  /** The {@code courseName} */
+  @ColumnInfo(name = "courseName")
+  private String courseName;
 
-            }
+  /** The {@code termName} */
+  @ColumnInfo(name = "termName")
+  private String termName;
 
-        public Assessment() {}
+  /** The {@code termId} */
+  @ColumnInfo(name = "termId")
+  private int termId;
 
+  /** The {@code assessmentStartDateTimeAlarm} */
+  @ColumnInfo(name = "assessmentStartDateTimeAlarm")
+  private String assessmentStartDateTimeAlarm;
 
-        //**********************************************Methods********************************************/
+  /** The {@code assessmentEndDateTimeAlarm} */
+  @ColumnInfo(name = "assessmentEndDateTimeAlarm")
+  private String assessmentEndDateTimeAlarm;
 
-        private static long getStartDateAsLong(String startDate)
-            {
-                return Long.parseLong(String.valueOf(Integer.parseInt(startDate)));
-            }
+  /** Constructor to initialize {@link Assessment} */
+  // **********************************************Constructors********************************************/
+  public Assessment(
+      String assessmentType,
+      String assessmentTitle,
+      String assessmentStartDate,
+      String assessmentEndDate,
+      int courseId,
+      String courseName,
+      int termId,
+      String termName,
+      String assessmentStartDateTimeAlarm,
+      String assessmentEndDateTimeAlarm) {
+    this.assessmentType = assessmentType;
+    this.assessmentTitle = assessmentTitle;
+    this.assessmentStartDate = assessmentStartDate;
+    this.assessmentEndDate = assessmentEndDate;
+    this.courseId = courseId;
+    this.courseName = courseName;
+    this.termName = termName;
+    this.termId = termId;
+    this.assessmentStartDateTimeAlarm = assessmentStartDateTimeAlarm;
+    this.assessmentEndDateTimeAlarm = assessmentEndDateTimeAlarm;
+  }
 
-        private static long getEndDateAsLong(String endDate)
-            {
-                return Long.parseLong(String.valueOf(Integer.parseInt(endDate)));
-            }
+  /** Constructor to initialize {@link Assessment} */
+  public Assessment() {}
 
-        public int getId()
-            {
-                return id;
-            }
+  // **********************************************Methods********************************************/
 
-        public void setId(@NonNull int id)
-            {
-                this.id = id;
-            }
+  private static long getStartDateAsLong(String startDate) {
+    return Long.parseLong(String.valueOf(Integer.parseInt(startDate)));
+  }
 
-        String getAssessmentType()
-            {
-                return assessmentType;
-            }
+  private static long getEndDateAsLong(String endDate) {
+    return Long.parseLong(String.valueOf(Integer.parseInt(endDate)));
+  }
 
-        void setAssessmentType(String assessmentType)
-            {
-                this.assessmentType = assessmentType;
-            }
+  /**
+   * @return the id as int
+   */
+  public int getId() {
+    return id;
+  }
 
-        String getAssessmentTitle()
-            {
-                return assessmentTitle;
-            }
+  /**
+   * Set the {@code id}
+   *
+   * @param id: The {@code id}
+   */
+  public void setId(@NonNull int id) {
+    this.id = id;
+  }
 
-        void setAssessmentTitle(String assessmentTitle)
-            {
-                this.assessmentTitle = assessmentTitle;
-            }
+  /**
+   * @return the assessmentType as {@link String}
+   */
+  String getAssessmentType() {
+    return assessmentType;
+  }
 
-        String getAssessmentStartDate()                         {return assessmentStartDate;}
+  /**
+   * Set the {@code assessmentType}
+   *
+   * @param assessmentType: The {@code assessmentType}
+   */
+  void setAssessmentType(String assessmentType) {
+    this.assessmentType = assessmentType;
+  }
 
-        void setAssessmentStartDate(String assessmentStartDate) {this.assessmentStartDate = assessmentStartDate;}
+  /**
+   * @return the assessmentTitle as {@link String}
+   */
+  String getAssessmentTitle() {
+    return assessmentTitle;
+  }
 
-        String getAssessmentEndDate()
-            {
-                return assessmentEndDate;
-            }
+  /**
+   * Set the {@code assessmentTitle}
+   *
+   * @param assessmentTitle: The {@code assessmentTitle}
+   */
+  void setAssessmentTitle(String assessmentTitle) {
+    this.assessmentTitle = assessmentTitle;
+  }
 
-        void setAssessmentEndDate(String assessmentEndDate)
-            {
-                this.assessmentEndDate = assessmentEndDate;
-            }
+  /**
+   * @return the assessmentStartDate as {@link String}
+   */
+  String getAssessmentStartDate() {
+    return assessmentStartDate;
+  }
 
-        public int getCourseId()
-            {
-                return courseId;
-            }
+  /**
+   * Set the {@code assessmentStartDate}
+   *
+   * @param assessmentStartDate: The {@code assessmentStartDate}
+   */
+  void setAssessmentStartDate(String assessmentStartDate) {
+    this.assessmentStartDate = assessmentStartDate;
+  }
 
-        public void setCourseId(int courseId)
-            {
-                this.courseId = courseId;
-            }
+  /**
+   * @return the assessmentEndDate as {@link String}
+   */
+  String getAssessmentEndDate() {
+    return assessmentEndDate;
+  }
 
-        public String getCourseName()
-            {
-                return courseName;
-            }
+  /**
+   * Set the {@code assessmentEndDate}
+   *
+   * @param assessmentEndDate: The {@code assessmentEndDate}
+   */
+  void setAssessmentEndDate(String assessmentEndDate) {
+    this.assessmentEndDate = assessmentEndDate;
+  }
 
-        public void setCourseName(String courseName)
-            {
-                this.courseName = courseName;
-            }
+  /**
+   * @return the courseId as int
+   */
+  public int getCourseId() {
+    return courseId;
+  }
 
-        public String getTermName()
-            {
-                return termName;
-            }
+  /**
+   * Set the {@code courseId}
+   *
+   * @param courseId: The {@code courseId}
+   */
+  public void setCourseId(int courseId) {
+    this.courseId = courseId;
+  }
 
-        public void setTermName(String termName)
-            {
-                this.termName = termName;
-            }
+  /**
+   * @return the courseName as {@link String}
+   */
+  public String getCourseName() {
+    return courseName;
+  }
 
-        int getTermId()
-            {
-                return termId;
-            }
+  /**
+   * Set the {@code courseName}
+   *
+   * @param courseName: The {@code courseName}
+   */
+  public void setCourseName(String courseName) {
+    this.courseName = courseName;
+  }
 
-        void setTermId(int termId)
-            {
-                this.termId = termId;
-            }
+  /**
+   * @return the termName as {@link String}
+   */
+  public String getTermName() {
+    return termName;
+  }
 
-        public String getAssessmentStartDateTimeAlarm()
-            {
-                return assessmentStartDateTimeAlarm;
-            }
+  /**
+   * Set the {@code termName}
+   *
+   * @param termName: The {@code termName}
+   */
+  public void setTermName(String termName) {
+    this.termName = termName;
+  }
 
-        public void setAssessmentStartDateTimeAlarm(String assessmentStartDateTimeAlarm)
-            {
-                this.assessmentStartDateTimeAlarm = assessmentStartDateTimeAlarm;
-            }
+  /**
+   * @return the termId as int
+   */
+  int getTermId() {
+    return termId;
+  }
 
-        public String getAssessmentEndDateTimeAlarm()
-            {
-                return assessmentEndDateTimeAlarm;
-            }
+  /**
+   * Set the {@code termId}
+   *
+   * @param termId: The {@code termId}
+   */
+  void setTermId(int termId) {
+    this.termId = termId;
+  }
 
-        public void setAssessmentEndDateTimeAlarm(String assessmentEndDateTimeAlarm)
-            {
-                this.assessmentEndDateTimeAlarm = assessmentEndDateTimeAlarm;
-            }
+  /**
+   * @return the assessmentStartDateTimeAlarm as {@link String}
+   */
+  public String getAssessmentStartDateTimeAlarm() {
+    return assessmentStartDateTimeAlarm;
+  }
 
+  /**
+   * Set the {@code assessmentStartDateTimeAlarm}
+   *
+   * @param assessmentStartDateTimeAlarm: The {@code assessmentStartDateTimeAlarm}
+   */
+  public void setAssessmentStartDateTimeAlarm(String assessmentStartDateTimeAlarm) {
+    this.assessmentStartDateTimeAlarm = assessmentStartDateTimeAlarm;
+  }
 
-    }
+  /**
+   * @return the assessmentEndDateTimeAlarm as {@link String}
+   */
+  public String getAssessmentEndDateTimeAlarm() {
+    return assessmentEndDateTimeAlarm;
+  }
+
+  /**
+   * Set the {@code assessmentEndDateTimeAlarm}
+   *
+   * @param assessmentEndDateTimeAlarm: The {@code assessmentEndDateTimeAlarm}
+   */
+  public void setAssessmentEndDateTimeAlarm(String assessmentEndDateTimeAlarm) {
+    this.assessmentEndDateTimeAlarm = assessmentEndDateTimeAlarm;
+  }
+}
