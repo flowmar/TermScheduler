@@ -57,7 +57,7 @@
 			android:foregroundTint="#F4F2F2"
 			android:hint="@string/select_assessment_type"
 			android:inputType="none"
-			android:labelFor="@id/add_assessment_term"
+			android:labelFor="@id/add_assessment_type"
 			android:textColor="@color/md_theme_dark_inverseSurface"
 			android:textColorHint="#B388FF"
 			android:visibility="visible"
@@ -135,46 +135,6 @@
 			android:textSize="20sp"
 			/>
 	</LinearLayout>
-
-
-	<com.google.android.material.textfield.TextInputLayout
-		android:id="@+id/add_assessment_term"
-		style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_marginVertical="8dp"
-		android:padding="8dp"
-		android:textColorHint="@color/md_theme_dark_onPrimaryContainer"
-		app:boxStrokeErrorColor="@color/md_theme_dark_errorContainer"
-		app:counterOverflowTextColor="@color/md_theme_dark_errorContainer"
-		app:cursorErrorColor="@color/md_theme_dark_errorContainer"
-		app:errorIconTint="@color/md_theme_dark_errorContainer"
-		app:errorTextColor="@color/md_theme_dark_errorContainer"
-		app:counterTextAppearance="@style/TextAppearance.AppCompat.Small"
-		app:counterOverflowTextAppearance="@style/TextAppearance.AppCompat.Small"
-		app:errorTextAppearance="@style/TextAppearance.AppCompat.Small"
-		app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
-		app:hintTextAppearance="@style/TextAppearance.AppCompat.Medium"
-		app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"
-		app:placeholderTextAppearance="@style/TextAppearance.AppCompat.Button"
-		app:hintTextColor="@color/md_theme_dark_onPrimaryContainer"
-		app:placeholderTextColor="@color/md_theme_dark_onPrimaryContainer"
-		app:prefixTextColor="@color/md_theme_dark_onPrimaryContainer"
-		>
-
-		<com.google.android.material.textfield.MaterialAutoCompleteTextView
-			android:id="@+id/add_edit_assessment_selected_term"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:hint="@string/select_term"
-			android:inputType="none"
-			android:labelFor="@id/add_assessment_term"
-			android:textColor="@color/md_theme_dark_inverseSurface"
-			android:textColorHint="#B388FF"
-			android:visibility="visible"
-			tools:visibility="visible"
-			/>
-	</com.google.android.material.textfield.TextInputLayout>
 
 
 

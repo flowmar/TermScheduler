@@ -18,88 +18,77 @@ import java.util.List;
  *
  *
  *******************/
-public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssessmentViewHolder>
-    {
-        // ********************************************Fields**************************************************/
+public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssessmentViewHolder> {
+	// ********************************************Fields**************************************************/
 
-        private List<Assessment>                      assessmentsList = new ArrayList<>();
-        private AssessmentAdapter.OnItemClickListener listener;
-
-
-        // ********************************************Methods**************************************************/
-        @Override
-        @NonNull
-        public AssessmentAdapter.AssessmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
-            {
-                LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-                AssessmentListItemBinding binding = AssessmentListItemBinding.inflate(layoutInflater, parent,
-                                                                                      false
-                                                                                     );
-
-                return new AssessmentAdapter.AssessmentViewHolder(binding);
-            }
-
-        @Override
-        public void onBindViewHolder(@NonNull AssessmentAdapter.AssessmentViewHolder holder, int position)
-            {
-                Assessment currentAssessment = this.assessmentsList.get(position);
-                holder.binding.assessmentListAssessmentNameTextView.setText(currentAssessment.getAssessmentTitle());
-                holder.binding.assessmentListCourseNameTextView.setText(currentAssessment.getCourseName());
-                holder.binding.assessmentListTermNameTextView.setText(currentAssessment.getTermName());
-            }
-
-        @Override
-        public int getItemCount()
-            {
-                return this.assessmentsList.size();
-            }
-
-        public void setAssessmentsList(List<Assessment> assessmentsList)
-            {
-                List<Assessment> safeAssessmentsList = new ArrayList<>(assessmentsList);
-
-                this.assessmentsList = safeAssessmentsList;
-                this.notifyDataSetChanged();
-            }
-
-        public Assessment getAssessmentAt(int position)
-            {
-                return this.assessmentsList.get(position);
-            }
-
-        public void setOnItemClickListener(AssessmentAdapter.OnItemClickListener listener)
-            {
-                this.listener = listener;
-            }
-
-        public interface OnItemClickListener
-            {
-                void onItemClick(Assessment term);
-            }
-
-        // ********************************************Static Classes**************************************************/
-        class AssessmentViewHolder extends RecyclerView.ViewHolder
-            {
-                private final AssessmentListItemBinding binding;
+	private List<Assessment>                      assessmentsList = new ArrayList<>();
+	private AssessmentAdapter.OnItemClickListener listener;
 
 
-                public AssessmentViewHolder(AssessmentListItemBinding binding)
-                    {
+	// ********************************************Methods**************************************************/
+	@Override
+	@NonNull
+	public AssessmentAdapter.AssessmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+		LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+		AssessmentListItemBinding binding = AssessmentListItemBinding.inflate(layoutInflater, parent,
+																			  false
+																			 );
 
-                        super(binding.getRoot());
-                        this.binding = binding;
+		return new AssessmentAdapter.AssessmentViewHolder(binding);
+	}
 
-                        binding.getRoot().setOnClickListener(v ->
-                                                                 {
-                                                                     int position = this.getAbsoluteAdapterPosition();
-                                                                     if (AssessmentAdapter.this.listener != null &&
-                                                                             position != RecyclerView.NO_POSITION)
-                                                                         {
-                                                                             AssessmentAdapter.this.listener.onItemClick(
-                                                                                     AssessmentAdapter.this.assessmentsList.get(
-                                                                                             position));
-                                                                         }
-                                                                 });
-                    }
-            }
-    }
+	@Override
+	public void onBindViewHolder(@NonNull AssessmentAdapter.AssessmentViewHolder holder, int position) {
+		Assessment currentAssessment = this.assessmentsList.get(position);
+		holder.binding.assessmentListAssessmentNameTextView.setText(currentAssessment.getAssessmentTitle());
+		holder.binding.assessmentListCourseNameTextView.setText(currentAssessment.getCourseName());
+	}
+
+	@Override
+	public int getItemCount() {
+		return this.assessmentsList.size();
+	}
+
+	public void setAssessmentsList(List<Assessment> assessmentsList) {
+		List<Assessment> safeAssessmentsList = new ArrayList<>(assessmentsList);
+
+		this.assessmentsList = safeAssessmentsList;
+		this.notifyDataSetChanged();
+	}
+
+	public Assessment getAssessmentAt(int position) {
+		return this.assessmentsList.get(position);
+	}
+
+	public void setOnItemClickListener(AssessmentAdapter.OnItemClickListener listener) {
+		this.listener = listener;
+	}
+
+	public interface OnItemClickListener {
+		void onItemClick(Assessment term);
+	}
+
+	// ********************************************Static Classes**************************************************/
+	class AssessmentViewHolder extends RecyclerView.ViewHolder {
+		private final AssessmentListItemBinding binding;
+
+
+		public AssessmentViewHolder(AssessmentListItemBinding binding) {
+
+			super(binding.getRoot());
+			this.binding = binding;
+
+			binding.getRoot().setOnClickListener(v ->
+												 {
+													 int position = this.getAbsoluteAdapterPosition();
+													 if (AssessmentAdapter.this.listener != null &&
+														 position != RecyclerView.NO_POSITION)
+													 {
+														 AssessmentAdapter.this.listener.onItemClick(
+																 AssessmentAdapter.this.assessmentsList.get(
+																		 position));
+													 }
+												 });
+		}
+	}
+}
