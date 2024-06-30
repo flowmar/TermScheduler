@@ -17,53 +17,49 @@ import java.util.List;
  *
  *
  *******************/
-public class CourseViewModel extends AndroidViewModel
-    {
-        //**********************************************Fields**************************************************
-        private final CourseRepository       mCourseRepository;
-        private final LiveData<List<Course>> allCourses;
+public class CourseViewModel extends AndroidViewModel {
+	//**********************************************Fields**************************************************
+	private final CourseRepository         mCourseRepository;
+	private final LiveData<List<Course>>   allCourses;
+	private final List<Course>             coursesList;
+	private final MutableLiveData<Boolean> deleteResult = new MutableLiveData<>();
 
-        private final List<Course>             coursesList;
-        private final MutableLiveData<Boolean> deleteResult = new MutableLiveData<>();
+	//**********************************************Constructors**************************************************
+	public CourseViewModel(@NonNull Application application) throws InterruptedException {
+		super(application);
+		mCourseRepository = new CourseRepository(application);
 
-        //**********************************************Constructors**************************************************
-        public CourseViewModel(@NonNull Application application) throws InterruptedException
-            {
-                super(application);
-                mCourseRepository = new CourseRepository(application);
-
-                allCourses  = mCourseRepository.getAllCourses();
-                coursesList = mCourseRepository.getCoursesList();
-            }
+		allCourses  = mCourseRepository.getAllCourses();
+		coursesList = mCourseRepository.getCoursesList();
+	}
 
 
-        /**********************************************Methods**************************************************/
-        public void insert(Course course)
-            {
-                mCourseRepository.insert(course);
-            }
+	/**********************************************Methods**************************************************/
+	public void insert(Course course) {
+		mCourseRepository.insert(course);
+	}
 
 
-        public void update(Course course)
-            {
-                mCourseRepository.update(course);
-            }
+	public void update(Course course) {
+		mCourseRepository.update(course);
+	}
 
-        public void delete(Context context, Course course)
-            {
-                mCourseRepository.delete(context, course);
-            }
+	public void delete(Context context, Course course) {
+		mCourseRepository.delete(context, course);
+	}
 
-        public LiveData<Boolean> getDeleteResult()
-            {
-                return deleteResult;
-            }
+	public LiveData<Boolean> getDeleteResult() {
+		return deleteResult;
+	}
 
 
-        LiveData<List<Course>> getAllCourses()
-            {
-                return allCourses;
-            }
+	LiveData<List<Course>> getAllCourses() {
+		return allCourses;
+	}
 
-        public List<Course> getCoursesList() {return coursesList;}
-    }
+	public List<Course> getCoursesList() {return coursesList;}
+
+	public LiveData<List<Course>> loadCoursesByTermId(int termId) {
+		return mCourseRepository.getCoursesByTermId(termId);
+	}
+}
