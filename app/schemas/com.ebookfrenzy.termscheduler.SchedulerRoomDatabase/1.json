@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "03e8d9d5cc5d0a17992f1cb4daef2c22",
+    "identityHash": "af9774eadb7f6cd76b0f53b8b6893ecf",
     "entities": [
       {
         "tableName": "terms",
@@ -168,7 +168,7 @@
       },
       {
         "tableName": "assessments",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assessment_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `assessment_type` TEXT, `assessment_title` TEXT, `assessment_start_date` TEXT, `assessment_end_date` TEXT, `courseId` INTEGER NOT NULL, `courseName` TEXT, `termName` TEXT, `termId` INTEGER NOT NULL, `assessmentStartDateTimeAlarm` TEXT, `assessmentEndDateTimeAlarm` TEXT, FOREIGN KEY(`courseId`) REFERENCES `courses`(`course_id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`assessment_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `assessment_type` TEXT, `assessment_title` TEXT, `assessment_start_date` TEXT, `assessment_end_date` TEXT, `courseId` INTEGER NOT NULL, `courseName` TEXT, `assessmentStartDateTimeAlarm` TEXT, `assessmentEndDateTimeAlarm` TEXT, FOREIGN KEY(`courseId`) REFERENCES `courses`(`course_id`) ON UPDATE NO ACTION ON DELETE RESTRICT )",
         "fields": [
           {
             "fieldPath": "id",
@@ -213,18 +213,6 @@
             "notNull": false
           },
           {
-            "fieldPath": "termName",
-            "columnName": "termName",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "termId",
-            "columnName": "termId",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
             "fieldPath": "assessmentStartDateTimeAlarm",
             "columnName": "assessmentStartDateTimeAlarm",
             "affinity": "TEXT",
@@ -252,15 +240,6 @@
             ],
             "orders": [],
             "createSql": "CREATE INDEX IF NOT EXISTS `index_assessments_courseId` ON `${TABLE_NAME}` (`courseId`)"
-          },
-          {
-            "name": "index_assessments_termId",
-            "unique": false,
-            "columnNames": [
-              "termId"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_assessments_termId` ON `${TABLE_NAME}` (`termId`)"
           }
         ],
         "foreignKeys": [
@@ -281,7 +260,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '03e8d9d5cc5d0a17992f1cb4daef2c22')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'af9774eadb7f6cd76b0f53b8b6893ecf')"
     ]
   }
 }
